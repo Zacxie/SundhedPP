@@ -7,17 +7,20 @@ import {HashRouter, Route, Switch} from "react-router-dom";
 
 function App() {
     return (
-        <LoginPage />
-        /*<HashRouter>
-            <Switch>
-                <Route path="/login">
-                    <LoginPage/>
-                </Route>
-                <Route path="/">
-                    <MainPage/>
-                </Route>
-            </Switch>
-        </HashRouter>*/
+        <div className="App">
+            <HashRouter>
+                <Switch>
+                    <Route path="/login">
+                        <LoginPage/>
+                    </Route>
+                    <Route path="/">
+                        <MainPage/>
+                    </Route>
+                </Switch>
+            </HashRouter>
+
+
+        </div>
     );
 }
 
