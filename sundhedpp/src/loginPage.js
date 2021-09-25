@@ -1,8 +1,9 @@
-import {Button, TextField} from "@material-ui/core";
+import {TextField} from "@material-ui/core";
 import React from "react";
 
 
 function LoginPage() {
+
     return (
         <div className="LoginPage">
             <header className="LoginPage-header">
@@ -15,13 +16,11 @@ function LoginPage() {
                 </div>
                 <br/>
                 <div>
-                    <Button id="loginButton" label="loginButton" variant="outlined"> Login </Button>
+                    <button variant="outlined">Login</button>
                 </div>
-
             </header>
         </div>
     );
-
 }
 
 
