@@ -1,4 +1,4 @@
-import {TextField} from "@material-ui/core";
+import {TextField, Button} from "@material-ui/core";
 import React from "react";
 
 
@@ -16,7 +16,7 @@ function LoginPage() {
                 </div>
                 <br/>
                 <div>
-                    <button variant="outlined">Login</button>
+                    <Button variant="outlined">Login</Button>
                 </div>
             </header>
         </div>

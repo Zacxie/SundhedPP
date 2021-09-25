@@ -8,18 +8,18 @@ import {HashRouter, Route, Switch} from "react-router-dom";
 function App() {
     return (
         <div className="App">
-            <HashRouter>
-                <Switch>
-                    <Route path="/login">
-                        <LoginPage/>
-                    </Route>
-                    <Route path="/">
-                        <MainPage/>
-                    </Route>
-                </Switch>
-            </HashRouter>
-
-
+            <header className="App-header">
+                <HashRouter>
+                    <Switch>
+                        <Route path="/login">
+                            <LoginPage/>
+                        </Route>
+                        <Route path="/">
+                            <MainPage/>
+                        </Route>
+                    </Switch>
+                </HashRouter>
+            </header>
         </div>
     );
 }
