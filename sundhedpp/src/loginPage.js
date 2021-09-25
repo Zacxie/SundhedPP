@@ -1,7 +1,5 @@
-import ReactDOM from 'react-dom';
-import {TextField} from "@material-ui/core";
+import {Button, TextField} from "@material-ui/core";
 import React from "react";
-import App from "./App";
 
 
 function LoginPage() {
@@ -15,14 +13,16 @@ function LoginPage() {
                 <div>
                     <TextField id="password" label="Password" type="password"/>
                 </div>
+                <br/>
+                <div>
+                    <Button id="loginButton" label="loginButton" variant="outlined"> Login </Button>
+                </div>
 
             </header>
         </div>
     );
 
 }
-
-
 
 
 export default LoginPage;
