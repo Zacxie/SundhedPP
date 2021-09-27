@@ -6,17 +6,10 @@ import {Button} from "../Button"
 class Navbar extends Component {
     state = {clicked: false}
 
-    handleClick = () => {
-        this.setState({ clicked: !this.state.clicked})
-    }
-
     render() {
         return (
             <nav className="NavbarItems">
                 <i className="fas fa-file-medical"></i><h1 className="navbar-logo">Sundhed++</h1>
-                <div className="menu-icon" onClick={this.handleClick}>
-                    <i className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
-                </div>
                 <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>
                     {MenuItems.map((item,index) => {
                         return (
