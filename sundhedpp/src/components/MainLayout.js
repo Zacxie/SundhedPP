@@ -10,9 +10,6 @@ const MainLayout = ({overlay}) => {
     return (
 
         <div className="rootLayout">
-            <div>
-                <Navbar />
-            </div>
             <Nav />
             <Dashboard />
             <Footer />
