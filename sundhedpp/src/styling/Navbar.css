@@ -113,12 +113,14 @@
         text-decoration: none;
         color: #fff;
         font-size: 1.5rem;
+        font-family: 'Monserrat', sans-serif;
     }
 
     .nav-links-mobile:hover {
         background: #fff;
         color: #6568f4;
         transition: 250ms;
+        font-family: 'Monserrat', sans-serif;
     }
 
     Button {
