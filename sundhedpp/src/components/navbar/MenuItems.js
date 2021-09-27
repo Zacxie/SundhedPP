@@ -18,5 +18,11 @@ export const MenuItems = [
         label: 'Log out',
         url: '#',
         className: 'nav-links'
+    },
+    {
+        label: 'Sign Up',
+        url: '#',
+        className: 'nav-links-mobile'
     }
+
 ]
