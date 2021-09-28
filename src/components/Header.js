@@ -1,9 +1,10 @@
 import '../styling/Header.css'
+import Navbar from "./navbar/Navbar";
 
 const Header = () => {
     return (
         <div id="header__main">
-            <h3>Header</h3>
+            <Navbar></Navbar>
         </div>
     )
 }
