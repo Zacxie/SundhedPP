@@ -16,7 +16,6 @@
                         </Route>
                         <Route path="/">
                         <div className="container">
-                            <Navbar></Navbar>
                            <MainLayout />
                         </div>
                         </Route>

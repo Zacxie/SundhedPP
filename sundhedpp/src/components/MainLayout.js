@@ -5,11 +5,13 @@ import Footer from './Footer'
 
 import '../styling/reset.css';
 import '../styling/MainLayout.css';
+import Header from "./Header";
 
 const MainLayout = ({overlay}) => {
     return (
 
         <div className="rootLayout">
+            <Header></Header>
             <Nav />
             <Dashboard />
             <Footer />
