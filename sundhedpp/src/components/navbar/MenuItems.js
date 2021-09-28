@@ -1,5 +1,10 @@
 export const MenuItems = [
     {
+        label: 'Search',
+        url: '/Search',
+        className: 'nav-links'
+    },
+    {
         label: 'Home',
         url: '/Home',
         className: 'nav-links'
