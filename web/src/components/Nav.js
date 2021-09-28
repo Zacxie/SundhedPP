@@ -1,4 +1,4 @@
-import '../main/webapp/styling/Nav.css'
+import '../styling/Nav.css'
 
 const Nav = () => {
     return (
