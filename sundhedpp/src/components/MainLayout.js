@@ -1,4 +1,4 @@
-import Header from './Header';
+import Navbar from '../components/navbar/Navbar'
 import Nav from './Nav';
 import Dashboard from './Dashboard';
 import Footer from './Footer'
@@ -8,8 +8,8 @@ import '../styling/MainLayout.css';
 
 const MainLayout = ({overlay}) => {
     return (
+
         <div className="rootLayout">
-            <Header />
             <Nav />
             <Dashboard />
             <Footer />

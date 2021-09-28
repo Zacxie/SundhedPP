@@ -2,6 +2,7 @@
   import './App.css';
   import LoginPage from "./loginPage";
   import MainLayout from './components/MainLayout'
+  import Navbar from "./components/navbar/Navbar";
   import {HashRouter, Route, Switch} from "react-router-dom";
   
   function App() {
@@ -15,6 +16,7 @@
                         </Route>
                         <Route path="/">
                         <div className="container">
+                            <Navbar></Navbar>
                            <MainLayout />
                         </div>
                         </Route>
