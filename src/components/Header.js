@@ -1,4 +1,4 @@
-import '../styling/Header.css'
+import '../main/webapp/styling/Header.css'
 import Navbar from "./navbar/Navbar";
 
 const Header = () => {

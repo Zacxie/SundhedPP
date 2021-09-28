@@ -1,6 +1,6 @@
-import Search from '../pages/Search'
+import Search from '../main/webapp/pages/Search'
 
-import '../styling/Dashboard.css'
+import '../main/webapp/styling/Dashboard.css'
 
 const Dashboard = () => {
     return (
