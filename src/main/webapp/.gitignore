@@ -1,0 +1,6 @@
+index.html
+asset-manifest.json
+
+# Don't include files from build
+static/css
+static/js
