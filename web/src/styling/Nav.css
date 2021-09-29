@@ -1,0 +1,17 @@
+
+
+#nav__main{
+    background-color: antiquewhite;
+    grid-column: 1 / 4;
+    grid-row: 2 / 3;
+}
+
+
+
+@media (max-width: 600px) {
+    #nav__main{
+        background-color: antiquewhite;
+        grid-column: 1 / 13;
+        grid-row: 2 / 3;
+    }
+}
