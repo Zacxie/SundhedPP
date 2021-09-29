@@ -9,5 +9,7 @@
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_16" default="true" project-jdk-name="openjdk-16" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
+  <component name="JavaScriptSettings">
+    <option name="languageLevel" value="FLOW" />
   </component>
 </project>

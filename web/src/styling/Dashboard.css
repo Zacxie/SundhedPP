@@ -1,14 +1,11 @@
-
-
-
 #dashboard__main{
-    background-color: brown;
+    background-color: #ffffff;
     grid-column: 4 / 13;
 }
 
 @media (max-width: 600px) {
     #dashboard__main{
-        background-color: brown;
+        background-color: #ffffff;
         grid-column: 1 / 13;
     }
 }
