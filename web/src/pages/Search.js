@@ -1,4 +1,6 @@
+import '../styling/Search.css'
 
+prescriptions
 
 const Search = () => {
     return (
