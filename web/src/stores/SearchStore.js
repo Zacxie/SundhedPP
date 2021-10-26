@@ -1,4 +1,4 @@
-
+import {makeAutoObservable, observable, runInAction} from "mobx"
 
 const baseUrl =  "http://localhost:8080"; //Base url til endpoint for at hente data
 
