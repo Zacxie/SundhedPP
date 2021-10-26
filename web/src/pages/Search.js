@@ -1,5 +1,5 @@
 import '../styling/Search.css'
-import {searchstore} from "./SearchStore";
+import {searchstore} from "../stores/SearchStore";
 
 const Search = () => {
     return (
