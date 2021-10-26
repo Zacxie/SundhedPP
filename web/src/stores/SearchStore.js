@@ -1,6 +1,7 @@
 
 
-const baseUrl =  "http://localhost:8080/":""; //Base url til endpoint for at hente data
+const baseUrl =  "http://localhost:8080"; //Base url til endpoint for at hente data
+
 class SearchStore {
 
     patients = [];
@@ -18,3 +19,5 @@ class SearchStore {
         )
     }
 }
+
+export const searchstore = new SearchStore();

@@ -1,6 +1,5 @@
 import '../styling/Search.css'
-
-prescriptions
+import {searchstore} from "./SearchStore";
 
 const Search = () => {
     return (
