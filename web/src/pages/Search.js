@@ -2,6 +2,8 @@ import React, {useState} from "react"
 import './Search.css';
 import SearchIcon from '@material-ui/icons/Search';
 import CloseIcon from '@material-ui/icons/Close';
+import TextField from '@mui/material/TextField';
+import Autocomplete from '@mui/material/Autocomplete';
 import PatientData from "./Data.json";
 
 
@@ -28,6 +30,17 @@ function Search() {
         setWordEntered("");
     }
     return(
+        <Autocomplete
+            id="free-solo-demo"
+            freeSolo
+            options={data} // data
+            getOptionLabel={(option) => {  // show options (name and cpr)
+                return (`${option.name}: ${option.cpr}`)}
+            }
+            sx={{ width: 300 }}
+            renderInput={(params) => <TextField {...params} label="Søg patient" />}
+        />
+        /*
         <div className="search">
             <div class="centered" className="searchInput" >
                 <input type="text" placeholder="Indtast patient navn..."
@@ -47,7 +60,7 @@ function Search() {
                     })}
                 </div>
             )}
-        </div>
+        </div>*/
     )
 }
 
