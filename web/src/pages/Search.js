@@ -1,5 +1,5 @@
 import React, {useState} from "react"
-import './Search.css';
+import '../styling/Search.css';
 import SearchIcon from '@material-ui/icons/Search';
 import CloseIcon from '@material-ui/icons/Close';
 import PatientData from "./Data.json";
