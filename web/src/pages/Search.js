@@ -5,6 +5,7 @@ import CloseIcon from '@material-ui/icons/Close';
 import PatientData from "./Data.json";
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
+import patientList from './patientlist'
 
 
 function Search() {
