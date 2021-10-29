@@ -1,8 +1,5 @@
-import React, {useState} from "react"
+import React from "react"
 import '../styling/Search.css';
-import SearchIcon from '@material-ui/icons/Search';
-import CloseIcon from '@material-ui/icons/Close';
-import PatientData from "./Data.json";
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import patientList from './patientlist'
