@@ -10,7 +10,9 @@ class Navbar extends Component {
     render() {
         return (
             <nav className="NavbarItems">
-                <i className="fas fa-file-medical"></i><h1 className="navbar-logo">Sundhed++</h1><i className= "searchbar"><Search/></i>
+                <i className="fas fa-file-medical"></i>
+                <h1 className="navbar-logo">Sundhed++</h1>
+                <i className= "searchbar"><Search/></i>
 
                 <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>
                     {MenuItems.map((item,index) => {
