@@ -11,7 +11,6 @@
             <header className="App-header">
                 <HashRouter>
                     <Switch>
-                        <Route path='/search' component={Search}/>
                         <Route path="/login">
                             <LoginPage/>
                         </Route>
