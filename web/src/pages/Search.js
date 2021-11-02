@@ -1,31 +1,6 @@
 import React from "react"
-import '../styling/Search.css';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
-
-
-
-function Search() {
-
-    return(
-        <div>
-        <Autocomplete
-            id="free-solo-demo"
-            freeSolo
-            options={patientList} // data
-            getOptionLabel={(option) => {  // show options (name and cpr)
-                return (`${option.name}: ${option.cpr}`)}
-            }
-            sx={{ width: 300 }}
-            renderInput={(params) => <TextField {...params} label="Søg patient" />}
-        />
-        </div>
-    )
-}
-
-
-export default Search;
-
 
 const patientList = [
     { name: 'Mikkel Jensen', cpr: "170390-2839" },
@@ -54,3 +29,23 @@ const patientList = [
     { name: "mark Delgado", cpr:  "160969-1294" },
     { name: "Lexi Noel", cpr: "280891-0988"}
 ]
+
+
+function Search() {
+
+    return(
+        <Autocomplete
+            id="free-solo-demo"
+            freeSolo
+            options={patientList} // data
+            getOptionLabel={(option) => {  // show options (name and cpr)
+                return (`${option.name}: ${option.cpr}`)}
+            }
+            sx={{ width: 300 }}
+            renderInput={(params) => <TextField {...params} label="Søg patient" />}
+        />
+
+    )
+}
+
+export default Search;
