@@ -2,7 +2,7 @@ import React from "react"
 import '../styling/Search.css';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
-import patientList from './patientlist'
+import patientList from './patientList'
 
 
 function Search() {
