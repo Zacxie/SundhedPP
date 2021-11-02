@@ -34,6 +34,7 @@ const patientList = [
 function Search() {
 
     return(
+        <div>
         <Autocomplete
             id="free-solo-demo"
             freeSolo
@@ -44,7 +45,7 @@ function Search() {
             sx={{ width: 300 }}
             renderInput={(params) => <TextField {...params} label="Søg patient" />}
         />
-
+        </div>
     )
 }
 
