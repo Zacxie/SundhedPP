@@ -1,10 +1,5 @@
 export const MenuItems = [
     {
-        label: 'Search',
-        url: '/#/Search',
-        className: 'nav-links'
-    },
-    {
         label: 'Home',
         url: '/#/Home',
         className: 'nav-links'
@@ -21,13 +16,8 @@ export const MenuItems = [
     },
     {
         label: 'Log out',
-        url: '/#/Log-out',
+        url: '/#/LogOut',
         className: 'nav-links'
-    },
-    {
-        label: 'Sign Up',
-        url: '/#/Sign-up',
-        className: 'nav-links-mobile'
     }
 
 ]
