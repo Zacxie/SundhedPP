@@ -1,4 +1,3 @@
-import Search from '../pages/Search'
 import Prescription from "./prescriptions/Prescription";
 import PrescriptionsTable from "./prescriptions/PrescriptionsTable";
 import {HashRouter, Switch, Route} from "react-router-dom";
@@ -12,8 +11,8 @@ const Dashboard = () => {
             {/*<Search />*/}
             <HashRouter>
                 <Switch>
-                    <Route path="/prescription/:id" component={Prescription} />
-                    <Route path="/" component={PrescriptionsTable} />
+                    <Route path="/prescription/:id" component={Prescription}/>
+                    <Route path="/" component={PrescriptionsTable}/>
                 </Switch>
             </HashRouter>
         </div>
