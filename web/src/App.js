@@ -3,7 +3,7 @@
   import LoginPage from "./loginPage";
   import MainLayout from './components/MainLayout'
   import {HashRouter, Route, Switch} from "react-router-dom";
-  
+
   function App() {
       return (
           <div className="App">
@@ -22,7 +22,9 @@
                 </HashRouter>
             </header>
         </div>
+
     );
 }
+
 
 export default App;
