@@ -1,6 +1,8 @@
-import {makeAutoObservable, observable, runInAction} from "mobx"
+import {makeAutoObservable, observable} from "mobx"
+
 
 const baseUrl =  "http://localhost:8080"; //Base url til endpoint for at hente data
+
 
 class PatientStore {
 
@@ -17,11 +19,10 @@ class PatientStore {
             .then(response => {
               return response.json()
             }).then(data => {
-                this.patients = data
-            console.log(data);
+                this.patients = data;
+            console.log(this.patients);
         });
     }
-
 }
 
 export const patientstore = new PatientStore();
