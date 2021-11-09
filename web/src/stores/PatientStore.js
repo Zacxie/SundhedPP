@@ -17,10 +17,14 @@ class PatientStore {
     fetchPatients() {
         fetch(baseUrl + "/rest/patient")
             .then(response => {
+                if(!response.ok) {
+                    throw Error('Error');
+                }
               return response.json()
             }).then(data => {
                 this.patients = data;
-            console.log(this.patients);
+            }).catch(error => {
+                console.log(error)
         });
     }
 }
