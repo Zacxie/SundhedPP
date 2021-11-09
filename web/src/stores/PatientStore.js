@@ -2,9 +2,10 @@ import {makeAutoObservable, observable, runInAction} from "mobx"
 
 const baseUrl =  "http://localhost:8080"; //Base url til endpoint for at hente data
 
-class SearchStore {
+class PatientStore {
 
     patients = [];
+
     constructor(props) {
         makeAutoObservable(this,{patients: observable},{autoBind:true});
         this.fetchPatients();
@@ -12,12 +13,15 @@ class SearchStore {
     }
 
     fetchPatients() {
-        fetch(baseUrl + "/patients").then(
-            (response) => response.json().then(
-                (json) => runInAction(() => this.patients=json)
-            )
-        )
+        fetch(baseUrl + "/rest/patient")
+            .then(response => {
+              return response.json()
+            }).then(data => {
+                this.patients = data
+            console.log(data);
+        });
     }
+
 }
 
-export const searchstore = new SearchStore();
+export const patientstore = new PatientStore();
