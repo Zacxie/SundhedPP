@@ -1,20 +1,20 @@
 package api.models;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonRootName;
+import com.fasterxml.jackson.annotation.*;
 import database.DatabaseHelper;
 import org.hibernate.Session;
 
 import javax.persistence.*;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
+import javax.ws.rs.NotFoundException;
 import java.util.Date;
 import java.util.List;
 
 @Entity
 @Table(name = "prescription")
 @JsonRootName(value = "prescription")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Prescription {
     @Id @GeneratedValue @Column(name = "id")
     @JsonProperty("id")
@@ -32,16 +32,21 @@ public class Prescription {
     @JsonProperty("end_date") @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     public Date endDate;
 
+    @ManyToOne
+    @JoinColumn(name = "patient_id", referencedColumnName = "id", nullable = false)
+    @JsonProperty("patient")
+    public Patient patient;
+
+    @JsonProperty("patient_id")
+    public void setPatientId(int id) {
+        Patient p = Patient.getById(id);
+        if (p == null)
+            throw new NotFoundException();
+
+        this.patient = p;
+    }
+
     public Prescription() {}
-
-    public Prescription(String description) {
-        this.description = description;
-    }
-
-    public Prescription(int id, String description) {
-        this.id = id;
-        this.description = description;
-    }
 
     public static List<Prescription> getAllFromDB() {
         Session session = DatabaseHelper.getSession();
