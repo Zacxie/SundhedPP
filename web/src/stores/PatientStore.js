@@ -25,6 +25,7 @@ class PatientStore {
                 this.forceReloadOrganization(data);
             }).catch(error => {
                 console.log(error)
+
         });
     }
 
