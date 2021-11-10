@@ -17,7 +17,7 @@ function Search() {
                 patientstore.patients.length = 0;
                 getNewOptions(newInputValue).forEach((item) => patientstore.patients.push(item))
             }}
-            options = patientstore.patients // data
+            options = patienstore // data
             getOptionLabel={(option) => {  // show options (name and cpr)
                 return (`${option.name}: ${option.cpr}`)}
             }
