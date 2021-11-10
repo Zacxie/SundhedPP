@@ -3,14 +3,13 @@ import {makeAutoObservable, observable} from "mobx"
 
 const baseUrl =  "http://localhost:8080"; //Base url til endpoint for at hente data
 
-
 class PatientStore {
 
     patients = [];
 
     constructor(props) {
-        makeAutoObservable(this,{patients: observable},{autoBind:true});
-        this.fetchPatients();
+      makeAutoObservable(this,{patients: observable},{autoBind:true});
+      this.fetchPatients();
 
     }
 
@@ -22,7 +21,9 @@ class PatientStore {
                 }
               return response.json()
             }).then(data => {
-                this.patients = data;
+                patientstore.patients = data;
+                console.log(data)
+                console.log(patientstore.patients)
             }).catch(error => {
                 console.log(error)
         });

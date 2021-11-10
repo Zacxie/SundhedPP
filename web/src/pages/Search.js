@@ -3,10 +3,7 @@ import {patientstore} from "../stores/PatientStore";
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 
-
-
 function Search() {
-
     return(
         <Autocomplete
             id="free-solo-demo"
