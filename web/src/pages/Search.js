@@ -14,10 +14,10 @@ function Search() {
             onInputChange={(event, newInputValue) => {
                 if (newInputValue.length < 3) return;
                 // UPDATING OPTIONS
-                options.length = 0;
-                getNewOptions(newInputValue).forEach((item) => options.push(item))
+                patientstore.patients.length = 0;
+                getNewOptions(newInputValue).forEach((item) => patientstore.patients.push(item))
             }}
-            options={patientstore.patients} // data
+            options = patientstore.patients // data
             getOptionLabel={(option) => {  // show options (name and cpr)
                 return (`${option.name}: ${option.cpr}`)}
             }
