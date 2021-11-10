@@ -22,11 +22,31 @@ class PatientStore {
                 }
               return response.json()
             }).then(data => {
-                this.patients = data;
+                this.forceReloadOrganization(data);
             }).catch(error => {
                 console.log(error)
         });
     }
+
+    forceReloadOrganization = (results) => {
+        {
+
+            if ( results.data != "" ) {
+                results.data.map(item => {
+
+                    this.patients.push({
+                            id:item.id,
+                            name: item.name,
+                        }
+                    )
+                });
+            }
+
+        }
+    }
 }
+
+
+
 
 export const patientstore = new PatientStore();
