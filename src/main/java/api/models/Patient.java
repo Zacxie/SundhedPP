@@ -26,7 +26,7 @@ public class Patient {
     @JsonProperty("cpr")
     public String cpr;
 
-    @OneToMany(mappedBy = "patient")
+    @OneToMany(mappedBy = "patient", fetch = FetchType.EAGER)
     @JsonIdentityReference(alwaysAsId = true)
     public List<Prescription> prescriptions;
 
