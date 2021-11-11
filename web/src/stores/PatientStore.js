@@ -1,7 +1,7 @@
 import {makeAutoObservable, observable} from "mobx"
 
 
-const baseUrl =  "http://localhost:8080"; //Base url til endpoint for at hente data
+const baseUrl =  "https://sundhedpp.fisk.devops.diplomportal.dk"; //Base url til endpoint for at hente data
 
 
 class PatientStore {
