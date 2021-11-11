@@ -1,9 +1,9 @@
 import React from 'react';
-import {render, screen, waitForElement} from '@testing-library/react';
+import {render, screen} from '@testing-library/react';
 import '@testing-library/jest-dom'
 import App from './App';
 import "@testing-library/jest-dom/extend-expect";
-import {createHashHistory} from "history";
+
 
 describe("Render components on main page", () => {
 
@@ -30,22 +30,5 @@ describe("Render components on main page", () => {
 
 })
 
-describe("Functions related to patient", () => {
 
-    test('search for patient', () => {
-        render(<App/>);
-
-    });
-
-    test('list prescriptions for patient', () => {
-        render(<App/>);
-
-    });
-
-    test('renew prescription', () => {
-        render(<App/>);
-
-    });
-
-})
 
