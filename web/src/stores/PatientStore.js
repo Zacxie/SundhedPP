@@ -32,7 +32,7 @@ class PatientStore {
     forceReloadOrganization = (results) => {
         {
 
-            if ( results.data != "" ) {
+            if ( results.data !== "" ) {
                 results.data.map(item => {
 
                     this.patients.push({

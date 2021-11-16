@@ -1,23 +1,24 @@
+
+
 export const MenuItems = [
     {
         label: 'Home',
-        url: '/#/Home',
+        url: '/#/home',
         className: 'nav-links'
     },
     {
         label: 'Profile',
-        url: '/#/Profile',
+        url: '/#/profile',
         className: 'nav-links'
     },
     {
         label: 'Dashboard',
-        url: '/#/Dashboard',
+        url: '/#/dashboard',
         className: 'nav-links'
     },
     {
         label: 'Log out',
-        url: '/#/LogOut',
-        className: 'nav-links'
+        url: '/#/login',
+        className: 'nav-links',
     }
-
 ]

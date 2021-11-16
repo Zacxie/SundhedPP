@@ -2,22 +2,32 @@
   import './App.css';
   import LoginPage from "./loginPage";
   import MainLayout from './components/MainLayout'
-  import {HashRouter, Route, Switch} from "react-router-dom";
+  import {HashRouter, Route, Switch, Redirect, useHistory} from "react-router-dom";
+  import {userStore} from "./stores/UserStore";
+
 
   function App() {
+
       return (
           <div className="App">
             <header className="App-header">
                 <HashRouter>
                     <Switch>
-                        <Route path="/login">
+                        <Route exact path="/login">
                             <LoginPage/>
                         </Route>
-                        <Route path="/">
-                        <div className="container">
-                           <MainLayout />
-                        </div>
-                        </Route>
+
+                        <Route exact path="/"
+                            render={() => (
+                                userStore.state ? (
+                                    <div className="container">
+                                        <MainLayout />
+                                    </div>
+                            ) : (
+                                    <Redirect to="/login"/>
+                            )
+                        )}/>
+
                     </Switch>
                 </HashRouter>
             </header>
@@ -25,6 +35,5 @@
 
     );
 }
-
 
 export default App;

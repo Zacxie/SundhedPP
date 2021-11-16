@@ -1,13 +1,14 @@
 import React, {Component} from 'react';
 import { MenuItems} from "./MenuItems";
 import '../../styling/Navbar.css';
-import {Button} from "../Button"
 import Search from '../../pages/Search';
+import {userStore} from "../../stores/UserStore";
 
 class Navbar extends Component {
     state = {clicked: false}
 
     render() {
+        console.log(userStore.token);
         return (
             <nav className="NavbarItems">
                 <i className="fas fa-file-medical"></i>
