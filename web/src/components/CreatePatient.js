@@ -1,5 +1,6 @@
 import React from "react"
 import {patientstore} from "../stores/PatientStore";
+import {Button} from "./Button";
 
 let patient;
 

@@ -3,6 +3,7 @@
   import LoginPage from "./loginPage";
   import MainLayout from './components/MainLayout'
   import {HashRouter, Route, Switch} from "react-router-dom";
+  import CreatePatient from "./components/CreatePatient";
 
   function App() {
       return (
@@ -12,6 +13,9 @@
                     <Switch>
                         <Route path="/login">
                             <LoginPage/>
+                        </Route>
+                        <Route path="/patients">
+                            <CreatePatient/>
                         </Route>
                         <Route path="/">
                         <div className="container">
