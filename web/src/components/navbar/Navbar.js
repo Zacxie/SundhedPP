@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import { MenuItems} from "./MenuItems";
 import '../../styling/Navbar.css';
-import {Button} from "../Button"
 import Search from '../../pages/Search';
 
 class Navbar extends Component {
@@ -13,7 +12,6 @@ class Navbar extends Component {
                 <i className="fas fa-file-medical"></i>
                 <h1 className="navbar-logo">Sundhed++</h1>
                 <i className= "searchbar"><Search/></i>
-
                 <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>
                     {MenuItems.map((item,index) => {
                         return (

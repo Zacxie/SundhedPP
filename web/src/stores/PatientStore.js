@@ -38,7 +38,7 @@ class PatientStore {
             },
             body: JSON.stringify(patient)
         }).then(res => res.json())
-            .then(res => console.log(res));
+          .then(res => console.log(res));
     }
 
     forceReloadOrganization = (results) => {

@@ -18,6 +18,13 @@ export const MenuItems = [
         label: 'Log out',
         url: '/#/LogOut',
         className: 'nav-links'
+    },
+    {
+        label: 'Create Patient',
+        url: '/#/Patients',
+        className: 'nav-links'
     }
+
+
 
 ]
