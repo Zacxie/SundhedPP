@@ -4,9 +4,9 @@ body{
 
 .rootLayout{
     display: grid;
-    grid-gap: 5px;
+    grid-gap: 7px;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: minmax(5vh, 14vh) 70vh minmax(5vh, 14vh);
+    grid-template-rows: minmax(5vh, 12vh)  68vh minmax(5vh, 15vh);
 }
 
 

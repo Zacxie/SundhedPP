@@ -1,10 +1,12 @@
 .NavbarItems {
     background: linear-gradient(90deg, rgb(110, 200, 254) 0%, rgba(73,63, 252, 1) 100%);
-    height: 90px;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1rem;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
 }
 
 .navbar-logo{

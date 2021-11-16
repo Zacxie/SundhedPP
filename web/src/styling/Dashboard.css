@@ -1,11 +1,13 @@
 #dashboard__main{
     background-color: #ffffff;
     grid-column: 4 / 13;
+    padding: 4px;
 }
 
 @media (max-width: 600px) {
     #dashboard__main{
         background-color: #ffffff;
         grid-column: 1 / 13;
+        padding: 4px;
     }
 }

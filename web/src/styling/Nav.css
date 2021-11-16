@@ -4,6 +4,8 @@
     background-color: antiquewhite;
     grid-column: 1 / 4;
     grid-row: 2 / 3;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
 }
 
 
@@ -13,5 +15,7 @@
         background-color: antiquewhite;
         grid-column: 1 / 13;
         grid-row: 2 / 3;
+        border-top-left-radius: 7px;
+        border-top-right-radius: 7px;
     }
 }

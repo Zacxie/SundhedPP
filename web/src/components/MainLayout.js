@@ -14,6 +14,7 @@ const MainLayout = ({overlay}) => {
             <Header />
             <Nav />
             <Dashboard />
+
             <Footer />
             {overlay}
         </div>
