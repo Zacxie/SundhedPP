@@ -18,6 +18,7 @@
   align-items: center;
   justify-content: center;
   color: black;
+  padding-top: 12px;
 }
 
 .App-link {
