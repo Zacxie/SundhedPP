@@ -29,6 +29,18 @@ class PatientStore {
         });
     }
 
+    postPatient(patient) {
+        fetch(baseUrl + "/rest/patient", {
+            method: 'POST',
+            headers: {
+                'Accept' : 'application/json',
+                'Content-Type' : 'application/json'
+            },
+            body: JSON.stringify(patient)
+        }).then(res => res.json())
+            .then(res => console.log(res));
+    }
+
     forceReloadOrganization = (results) => {
         {
 

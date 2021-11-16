@@ -30,5 +30,12 @@ describe("Render components on main page", () => {
 
 })
 
+test('list prescriptions for patient', () => {
+    render(<App/>);
 
+});
 
+test('renew prescription', () => {
+    render(<App/>);
+
+});
