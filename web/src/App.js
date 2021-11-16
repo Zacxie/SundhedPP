@@ -1,6 +1,6 @@
   import React from 'react';
   import './App.css';
-  import LoginPage from "./loginPage";
+  import LoginPage from "./components/loginPage";
   import MainLayout from './components/MainLayout'
   import {HashRouter, Route, Switch, Redirect, useHistory} from "react-router-dom";
   import {userStore} from "./stores/UserStore";

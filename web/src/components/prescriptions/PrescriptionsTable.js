@@ -1,12 +1,13 @@
 import {prescriptionStore} from "../../stores/PrescriptionStore";
 import {DataGrid, GridRowsProp} from "@mui/x-data-grid";
 import React from "react";
-import {Redirect} from "react-router-dom";
 import {GridColDef} from "@mui/x-data-grid";
 
 import '../../styling/prescriptions/PrescriptionsTable.css'
 
 class PrescriptionsTable extends React.Component {
+
+
 
     redirect = (id) => {
         let path = "/#/prescription/" + id; // We use hashrouter
@@ -14,6 +15,7 @@ class PrescriptionsTable extends React.Component {
     }
 
     render() {
+
         const columns: GridColDef[] = [
             {field: 'patientName', headerName: 'Patient', width: 150},
             {field: 'startDate', headerName: 'Start Date', width: 150},

@@ -17,7 +17,7 @@ export const MenuItems = [
         className: 'nav-links'
     },
     {
-        label: 'Log out',
+        label: 'Logout',
         url: '/#/login',
         className: 'nav-links',
     }

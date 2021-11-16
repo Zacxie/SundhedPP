@@ -7,6 +7,7 @@ const Footer = () => {
             <br/>
             <Divider variant="middle" />
             <h3>Footer</h3>
+
         </div>
     )
 }

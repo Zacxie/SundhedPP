@@ -1,4 +1,5 @@
-import React from "react"
+import React, {useState} from "react";
+
 import {patientstore} from "../stores/PatientStore";
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
@@ -6,11 +7,9 @@ import Autocomplete from '@mui/material/Autocomplete';
 
 
 function Search() {
-
-
-
     return(
         <Autocomplete
+
             id="free-solo-demo"
             freeSolo
             options={patientstore.patients} // data
@@ -19,6 +18,7 @@ function Search() {
             }
             sx={{ width: 300 }}
             renderInput={(params) => <TextField {...params} label="Søg patient" />}
+
         />
     )
 }
