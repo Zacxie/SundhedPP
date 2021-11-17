@@ -4,28 +4,28 @@ import '@testing-library/jest-dom'
 import App from './App';
 import "@testing-library/jest-dom/extend-expect";
 
-
 describe("Render components on main page", () => {
 
     test('render menu elements', () => {
         render(<App/>);
-        expect(screen.getByText('Sundhed++')).toBeInTheDocument();
-        expect(screen.getByText('Home')).toBeInTheDocument();
-        expect(screen.getByText('Profile')).toBeInTheDocument();
-        expect(screen.getAllByText('Dashboard'));
-        expect(screen.getAllByText('Log out'));
+        expect(screen.getByRole('heading', {name: /sundhed\+\+/i}));
+        expect(screen.getByRole('link', {name: /home/i}));
+        expect(screen.getByRole('link', {name: /profile/i}));
+        expect(screen.getByRole('link', {name: /dashboard/i}));
+        expect(screen.getByRole('link', {name: /log out/i}));
     });
 
     test('render mainlayout elements', () => {
         render(<App/>);
+        expect(screen.getByRole('navigation'));
         expect(screen.getByText('Footer')).toBeInTheDocument();
-        expect(screen.getByText('Nav')).toBeInTheDocument();
-        expect(screen.getAllByText('Dashboard'));
+        expect(screen.getByRole('heading', {name: /dashboard/i}));
+        expect(screen.getByRole('grid'))
     });
 
     test('render searchbar', () => {
         render(<App/>);
-        expect(screen.getAllByText('Søg patient'));
+        expect(screen.getByRole('textbox', {name: /søg patient/i}));
     });
 
 })
