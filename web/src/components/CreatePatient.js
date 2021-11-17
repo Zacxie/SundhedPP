@@ -18,7 +18,7 @@ function CreatePatient() {
                 <label> Create Patient </label>
                 <input type="text"
                        placeholder="Enter name"
-                       name="name" {...register('name', {required: true} )}
+                       name="name" {...register('name', {required: true, pattern: /^[A-Za-z]+$/} )}
                 />
 
                 <input type="text"
