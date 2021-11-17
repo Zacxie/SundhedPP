@@ -31,7 +31,7 @@ class PatientStore {
     }
 
     postPatient(patient) {
-        fetch(baseUrl + "/rest/patient", {
+        fetch(baseUrlTest + "/rest/patient", {
             method: 'POST',
             headers: {
                 'Accept' : 'application/json',
