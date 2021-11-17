@@ -22,7 +22,7 @@ function CreatePatient() {
                 />
                 <input type="text"
                        placeholder="Enter cpr-number"
-                       name="cpr" {...register('cpr', {required: true, minLength: 10})}
+                       name="cpr" {...register('cpr', {required: true, minLength: 10, maxLength: 10})}
                 />
                 <input type="submit" />
             </form>
