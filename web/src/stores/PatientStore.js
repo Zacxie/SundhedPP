@@ -1,7 +1,8 @@
 import {makeAutoObservable, observable} from "mobx"
 
 
-const baseUrl =  "https://sundhedpp.fisk.devops.diplomportal.dk"; //Base url til endpoint for at hente data
+const baseUrlProd =  "https://sundhedpp.fisk.devops.diplomportal.dk";
+const baseUrlTest = "https://localhost:8080";//Base url til endpoint for at hente data
 
 
 class PatientStore {
@@ -15,7 +16,7 @@ class PatientStore {
     }
 
     fetchPatients() {
-        fetch(baseUrl + "/rest/patient")
+        fetch(baseUrlTest + "/rest/patient")
             .then(response => {
                 if(!response.ok) {
                     throw Error('Error');
