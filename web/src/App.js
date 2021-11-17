@@ -4,11 +4,12 @@
   import MainLayout from './components/MainLayout'
   import {HashRouter, Route, Switch} from "react-router-dom";
   import CreatePatient from "./components/CreatePatient";
+  import Navbar from "./components/navbar/Navbar";
 
   function App() {
       return (
           <div className="App">
-            <header className="App-header">
+              <header className="App-header">
                 <HashRouter>
                     <Switch>
                         <Route path="/login">

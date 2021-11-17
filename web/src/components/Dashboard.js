@@ -1,6 +1,7 @@
 import Prescription from "./prescriptions/Prescription";
 import PrescriptionsTable from "./prescriptions/PrescriptionsTable";
 import {HashRouter, Switch, Route} from "react-router-dom";
+import CreatePatient from "./CreatePatient";
 
 import '../styling/Dashboard.css'
 
@@ -15,6 +16,7 @@ const Dashboard = () => {
                     <Route path="/" component={PrescriptionsTable}/>
                 </Switch>
             </HashRouter>
+            <CreatePatient></CreatePatient>
         </div>
     )
 }

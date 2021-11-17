@@ -3,15 +3,15 @@ import { useForm } from 'react-hook-form';
 import {patientstore} from "../stores/PatientStore";
 import '../styling/Form.css'
 
+
 function CreatePatient() {
 
-    const {register, handleSubmit, errors} = useForm();
+    const {register, handleSubmit} = useForm();
 
     const onSubmit = (patient) => {
         console.log(patient)
         patientstore.postPatient(patient)
     }
-
     return(
         <div className="form-box">
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -20,7 +20,6 @@ function CreatePatient() {
                        placeholder="Enter name"
                        name="name" {...register('name', {required: true, pattern: /^[A-Za-z]+$/} )}
                 />
-
                 <input type="text"
                        placeholder="Enter cpr-number"
                        name="cpr" {...register('cpr', {required: true, minLength: 10})}
