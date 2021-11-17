@@ -1,10 +1,7 @@
 import React from "react"
 import { useForm } from 'react-hook-form';
 import {patientstore} from "../stores/PatientStore";
-import {Button} from "./Button";
-
-let patient;
-
+import '../styling/Form.css'
 
 function CreatePatient() {
 
@@ -16,11 +13,21 @@ function CreatePatient() {
     }
 
     return(
-        <form onSubmit={handleSubmit(onSubmit)}>
-            <input type="text" placeholder="Indtast navn" name="name" {...register('name')}/>
-            <input type="text" placeholder="Indtast cpr-nummer" name="cpr" {...register('cpr')}/>
-            <input type="submit" />
-        </form>
+        <div className="form-box">
+            <form onSubmit={handleSubmit(onSubmit)}>
+                <label> Create Patient </label>
+                <input type="text"
+                       placeholder="Enter name"
+                       name="name" {...register('name', {required: true} )}
+                />
+
+                <input type="text"
+                       placeholder="Enter cpr-number"
+                       name="cpr" {...register('cpr', {required: true, minLength: 10})}
+                />
+                <input type="submit" />
+            </form>
+        </div>
     )
 }
 
