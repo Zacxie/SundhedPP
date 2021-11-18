@@ -1,3 +1,7 @@
+body {
+    margin:0
+}
+
 .NavbarItems {
     background: linear-gradient(90deg, rgb(110, 200, 254) 0%, rgba(73,63, 252, 1) 100%);
     height: 90px;
@@ -51,4 +55,32 @@
 .fa-bars {
     color: #ffff
 }
+
+@media only screen and (max-width: 1000px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 5rem;
+        flex-direction: column;
+        background-color: #fff;
+        width: 100%;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-items {
+        display: none;
+    }
+
+    .navbar-logo {
+        display: none;
+    }
+
+    .fa-file-medical {
+        display: none;
+    }
+}
+
 

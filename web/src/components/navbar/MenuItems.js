@@ -10,8 +10,8 @@ export const MenuItems = [
         className: 'nav-links'
     },
     {
-        label: 'Dashboard',
-        url: '/#/Dashboard',
+        label: 'Create Patient',
+        url: '/#/Patients',
         className: 'nav-links'
     },
     {
@@ -19,11 +19,6 @@ export const MenuItems = [
         url: '/#/LogOut',
         className: 'nav-links'
     },
-    {
-        label: 'Create Patient',
-        url: '/#/Patients',
-        className: 'nav-links'
-    }
 
 
 
