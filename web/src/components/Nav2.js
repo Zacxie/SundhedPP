@@ -21,7 +21,7 @@ function Nav2 () {
                     <a href="/#/home">Home</a>
                     <a href="/#/profile">Profile</a>
                     <a href="/#/patients">Create Patient</a>
-                    <a href="/#/Log-out">Log out</a>
+                    <a href="/#/log-out">Log out</a>
                 </div>
                 <button onClick={ () => setShowLinks(!showLinks)}><DehazeSharpIcon/></button>
         </div>
