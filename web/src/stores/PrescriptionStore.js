@@ -1,6 +1,10 @@
 import {makeObservable, observable} from "mobx";
 
+const baseUrlProd =  "https://sundhedpp.fisk.devops.diplomportal.dk";
+const baseUrlTest = "http://localhost:8080";//Base url til endpoint for at hente data
+
 class PrescriptionStore {
+
     prescriptions = [
         {
             id: 1,
@@ -65,6 +69,18 @@ class PrescriptionStore {
 
     constructor() {
         makeObservable(this, {prescriptions: observable});
+    }
+
+    postPrescription(prescription) {
+        fetch(baseUrlProd + "/rest/prescription", {
+            method: 'POST',
+            headers: {
+                'Accept' : 'application/json',
+                'Content-Type' : 'application/json'
+            },
+            body: JSON.stringify(prescription)
+        }).then(res => res.json())
+            .then(res => console.log(res));
     }
 }
 
