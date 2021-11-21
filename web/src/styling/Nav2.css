@@ -69,7 +69,17 @@
     padding-left: 10px;
 }
 
+.fa-file-medical {
+    margin-left: 1rem;
+    font-size: 2rem;
+    color: #fff;
+}
 
+.navbar-logo{
+    color: #fff;
+    margin-left: 20px;
+    cursor: pointer;
+}
 
 @media only screen and (max-width: 850px) {
     .Navbar .RightSide .Links a {
