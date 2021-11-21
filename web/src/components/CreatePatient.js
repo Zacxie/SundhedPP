@@ -6,7 +6,7 @@ import '../styling/Form.css'
 
 function CreatePatient() {
 
-    const {register, handleSubmit} = useForm();
+    const {register, handleSubmit, errors} = useForm();
 
     const onSubmit = (patient) => {
         console.log(patient)
@@ -18,12 +18,11 @@ function CreatePatient() {
                 <label> Create Patient </label>
                 <input type="text"
                        placeholder="Enter name"
-                       name="name" {...register('name', {required: true, pattern: /^[a-zA-Z\s]+$/} )}
-                />
+                       name="name" {...register('name', {required: true, pattern: /^[a-zA-Z\s]+$/})}/>
                 <input type="text"
                        placeholder="Enter cpr-number"
-                       name="cpr" {...register('cpr', {required: true, minLength: 11, maxLength: 11})}
-                />
+                       name="cpr" {...register('cpr', {required: true, minLength: 11, maxLength: 11})}/>
+
                 <input type="submit" />
             </form>
         </div>
