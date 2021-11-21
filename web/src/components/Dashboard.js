@@ -16,7 +16,6 @@ const Dashboard = () => {
                     <Route path="/" component={PrescriptionsTable}/>
                 </Switch>
             </HashRouter>
-            <CreatePatient></CreatePatient>
         </div>
     )
 }
