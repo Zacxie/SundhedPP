@@ -7,11 +7,9 @@
 .form-box{
     min-width: 50%;
     height: 100vh;
-    /* border: 1px solid red; */
     margin: 0vw;
     padding: 5vw ;
     position:relative;
-    /* position:relative for .prevBtn and .nextBtn position:absolute; */
 }
 
 
@@ -20,7 +18,7 @@
     width: 100%;
     padding: .5rem .8rem .5rem .8rem;
     margin: .9vw 0 ;
-    border:0;
+    border: 0;
     border-radius: 5px;
     font-size: 15px;
 }
@@ -31,6 +29,8 @@ input[type=submit] {
     outline: none;
     border: none;
     cursor: pointer;
+    background: linear-gradient(90deg, rgb(110, 200, 254) 0%, rgba(73,63, 252, 1) 100%);;
+    color: white;
 }
 
 input[type=submit]:hover {
