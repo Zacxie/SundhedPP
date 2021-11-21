@@ -12,11 +12,11 @@ const Dashboard = () => {
             {/*<Search />*/}
             <HashRouter>
                 <Switch>
+                    <Route path="/create-patient" component={CreatePatient}/>
                     <Route path="/prescription/:id" component={Prescription}/>
                     <Route path="/" component={PrescriptionsTable}/>
                 </Switch>
             </HashRouter>
-            <CreatePatient></CreatePatient>
         </div>
     )
 }

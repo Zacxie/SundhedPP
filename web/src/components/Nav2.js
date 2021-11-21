@@ -1,4 +1,4 @@
-import '../components/Nav2.css';
+import '../styling/Nav2.css';
 import React, {useState} from 'react';
 import Search from '../pages/Search';
 import DehazeSharpIcon from '@mui/icons-material/DehazeSharp';

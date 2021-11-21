@@ -1,15 +1,13 @@
   import React from 'react';
-  import './App.css';
+  import './styling/App.css';
   import LoginPage from "./loginPage";
   import MainLayout from './components/MainLayout'
   import {HashRouter, Route, Switch} from "react-router-dom";
   import CreatePatient from "./components/CreatePatient";
-  import Nav2 from "./components/Nav2";
 
   function App() {
       return (
           <div className="App">
-              <Nav2></Nav2>
               <header className="App-header">
                 <HashRouter>
                     <Switch>

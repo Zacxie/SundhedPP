@@ -1,11 +1,8 @@
-body {
-    margin: 0;
-    padding: 0;
-}
+
 
 .Navbar {
     background: linear-gradient(90deg, rgb(110, 200, 254) 0%, rgb(73,63, 252) 100%);
-    width: 100%;
+    width: 100vw;
     height: 80px;
     font-family: Arial, Helvetica, SansSerif;
     display: flex;
@@ -37,10 +34,6 @@ body {
 .fa-file-medical {
     cursor: pointer;
 }
-
-
-
-
 
 
 .Navbar .RightSide button {
@@ -106,7 +99,7 @@ body {
     .Navbar .RightSide #hidden {
         position: absolute;
         z-index: 1000 !important;
-        left: 0px;
+        left: 0;
         top: 80px;
         max-height: 230px;
         width: 100%;
