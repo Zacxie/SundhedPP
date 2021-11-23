@@ -16,11 +16,25 @@
 .form-box input{
     display: block;
     width: 100%;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
     padding: .5rem .8rem .5rem .8rem;
     margin: .9vw 0 ;
     border: 0;
     border-radius: 5px;
     font-size: 15px;
+}
+
+.form-box textarea {
+    display: block;
+    width: 100%;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    height: 100px;
+    padding: .5rem .8rem .5rem .8rem;
+    margin: .9vw 0 ;
+    border: 0;
+    border-radius: 5px;
+    font-size: 15px;
+    resize: none;
 }
 
 input[type=submit] {

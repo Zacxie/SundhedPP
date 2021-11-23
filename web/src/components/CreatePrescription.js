@@ -15,7 +15,7 @@ function CreatePrescription() {
     return(
         <div className="form-box">
             <form onSubmit={handleSubmit(onSubmit)}>
-                <label> Create Description </label>
+                <label> Create Prescriptipn </label>
                 <input type="text"
                        placeholder="Choose Patient"
                        name="patient" {...register('patient', { required: true })}
@@ -34,8 +34,6 @@ function CreatePrescription() {
                           placeholder="Enter a description"
                           name="description" {...register('description')}
                 />
-
-
 
                 <input type="submit" />
             </form>
