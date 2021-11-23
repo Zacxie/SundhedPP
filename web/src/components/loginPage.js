@@ -15,9 +15,12 @@ const LoginPage = () => {
 
             if (props === "dtu") {
                 // request dtu
-                //fetch(baseURL+"/dtu").then(response => console.log)
+                //fetch(baseURL+"/dtu").then(response => data)
                 console.log("dtu")
+                userStore.users.find("s172133");
                 userStore.state = true;
+
+
 
             } else if (props === "github") {
                 // request github
@@ -66,3 +69,6 @@ export default LoginPage;
 
 
 
+function userOauth(){
+
+}

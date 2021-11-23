@@ -3,6 +3,7 @@ import {makeObservable, observable} from "mobx";
 class UserStore {
     users = [];
     token = "false";
+    secret = "";
     state = false;
 
 
