@@ -17,6 +17,7 @@ function CreatePrescription() {
         console.log(patient);
     }
 
+
     const onSubmit = (prescription) => {
         console.log(prescription)
         prescriptionStore.postPrescription(prescription)
@@ -31,7 +32,7 @@ function CreatePrescription() {
                 getOptionLabel={(option) => {  // show options (name and cpr)
                     return (`${option.name}: ${option.cpr}`)}
                 }
-                sx={{ width: 350}}
+                sx={{ width: 510}}
                 onChange={handleAutocomplete}
                 renderInput={(params) => <TextField {...params} label="Choose Patient" />}
             />
@@ -40,7 +41,7 @@ function CreatePrescription() {
                 <label> Create Prescription </label>
                 <input type="text"
                        placeholder="Choose Patient"
-                       value={`${patient.name}: ${patient.cpr}`}
+                       value={"" && (`${patient.name}: ${patient.cpr}`)} //(`${patient.name}: ${patient.cpr}`)
                        name="patient" {...register('patient', { required: true })}
                 />
                 <input type="text"
