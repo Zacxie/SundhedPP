@@ -15,15 +15,28 @@ function CreatePrescription() {
     return(
         <div className="form-box">
             <form onSubmit={handleSubmit(onSubmit)}>
-                <label> Create Patient </label>
+                <label> Create Description </label>
                 <input type="text"
-                       placeholder="Enter name"
-                       name="name" {...register('name', {required: true, pattern: /^[a-zA-Z\s]+$/} )}
+                       placeholder="Choose Patient"
+                       name="patient" {...register('patient', { required: true })}
                 />
                 <input type="text"
-                       placeholder="Enter cpr-number"
-                       name="cpr" {...register('cpr', {required: true, minLength: 11, maxLength: 11})}
+                       placeholder="Enter start-date (yyyy-MM-dd)"
+                       name="start-date" {...register('start-date', { required: true })}
                 />
+
+                <input type="text"
+                       placeholder="Enter end-date (yyyy-MM-dd)"
+                       name="end-date" {...register('end-date', { required: true })}
+                />
+
+                <input type="text"
+                       placeholder="Enter a description"
+                       name="description"
+                />
+
+
+
                 <input type="submit" />
             </form>
         </div>
