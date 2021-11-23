@@ -6,7 +6,7 @@ import '../styling/Form.css'
 
 function CreatePatient() {
 
-    const {register, handleSubmit} = useForm();
+    const {register, handleSubmit, formState: {errors}} = useForm();
 
     const onSubmit = (patient) => {
         console.log(patient)
@@ -17,6 +17,7 @@ function CreatePatient() {
             <form onSubmit={handleSubmit(onSubmit)}>
                 <label> Create Patient </label>
                 <input type="text"
+                       id="name"
                        placeholder="Enter name"
                        name="name" {...register('name', {required: true, pattern: /^[a-zA-Z\s]+$/} )}
                 />

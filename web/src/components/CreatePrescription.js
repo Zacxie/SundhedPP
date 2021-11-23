@@ -30,9 +30,9 @@ function CreatePrescription() {
                        name="end-date" {...register('end-date', { required: true })}
                 />
 
-                <input type="text"
-                       placeholder="Enter a description"
-                       name="description"
+                <textarea
+                          placeholder="Enter a description"
+                          name="description" {...register('description')}
                 />
 
 

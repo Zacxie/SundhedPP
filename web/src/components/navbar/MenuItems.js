@@ -23,6 +23,11 @@ export const MenuItems = [
         label: 'Create Patient',
         url: '/#/Patients',
         className: 'nav-links'
+    },
+    {
+        label: 'Create Prescription',
+        url: '/#/Prescriptions',
+        className: 'nav-links'
     }
 
 
