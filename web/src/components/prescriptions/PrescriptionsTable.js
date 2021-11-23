@@ -1,8 +1,6 @@
 import {prescriptionStore} from "../../stores/PrescriptionStore";
-import {DataGrid, GridRowsProp} from "@mui/x-data-grid";
+import {DataGrid, GridColDef, GridRowsProp} from "@mui/x-data-grid";
 import React from "react";
-import {Redirect} from "react-router-dom";
-import {GridColDef} from "@mui/x-data-grid";
 
 import '../../styling/prescriptions/PrescriptionsTable.css'
 
