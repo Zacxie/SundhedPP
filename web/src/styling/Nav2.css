@@ -33,9 +33,6 @@
     text-decoration: underline;
 }
 
-.fa-file-medical {
-    cursor: pointer;
-}
 
 
 .Navbar .RightSide button {
@@ -64,6 +61,11 @@
 }
 
 .Navbar .LeftSide a {
+    padding-right: 10px;
+    font-size: 30px;
+}
+
+.Navbar .LeftSide a {
     text-decoration: none;
     color: white;
 }
@@ -84,9 +86,10 @@
     .Navbar .RightSide .Links a {
         font-size: 10px;
     }
+
 }
 
-@media only screen and (max-width: 825px) {
+@media only screen and (max-width: 830px) {
     .Navbar .RightSide button{
         display: flex;
         cursor: pointer;
@@ -94,6 +97,11 @@
         background-color: transparent;
         border: none;
     }
+
+    .Navbar .LeftSide h1 {
+        display: none;
+    }
+
 
     .Navbar .RightSide .Links {
         display: none;

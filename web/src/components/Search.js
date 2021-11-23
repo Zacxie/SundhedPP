@@ -17,6 +17,7 @@ function Search() {
             }
             sx={{width: 300}}
             renderInput={(params) => <TextField {...params} label="Søg patient"/>}
+
         />
     )
 }
