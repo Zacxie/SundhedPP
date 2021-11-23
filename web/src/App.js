@@ -1,5 +1,5 @@
   import React from 'react';
-  import './App.css';
+  import './styling/App.css';
   import LoginPage from "./components/loginPage";
   import MainLayout from './components/MainLayout'
   import {HashRouter, Route, Switch, Redirect, useHistory} from "react-router-dom";
