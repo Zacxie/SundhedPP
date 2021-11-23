@@ -35,8 +35,10 @@ function CreatePrescription() {
                 }
                 sx={{ width: 300 }}
                 onInputChange={handleInputChange}
+                // onChange={(event, value) => patient = value}
                 renderInput={(params) => <TextField {...params} label="Choose Patient" />}
             />
+            <p>You chose: {patient}</p>
             <br/>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <label> Create Prescription </label>
@@ -58,7 +60,6 @@ function CreatePrescription() {
                           placeholder="Enter a description"
                           name="description" {...register('description')}
                 />
-
                 <input type="submit" />
             </form>
         </div>
