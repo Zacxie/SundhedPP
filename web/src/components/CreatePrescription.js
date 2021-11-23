@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { useForm } from 'react-hook-form';
 import {prescriptionStore} from "../stores/PrescriptionStore";
 import {patientstore} from "../stores/PatientStore";
@@ -9,12 +9,12 @@ import {Autocomplete} from "@mui/material";
 function CreatePrescription() {
 
     const {register, handleSubmit} = useForm();
-    let patient;
+    const [patient, setPatient] = useState()
 
-    function handleInputChange(event, value) {
-        console.log(value);
-        patient = value;
-        console.log(patient)
+
+    const handleAutocomplete = (e, patient) => {
+        setPatient(patient);
+        console.log(patient);
     }
 
     const onSubmit = (prescription) => {
@@ -23,9 +23,7 @@ function CreatePrescription() {
     }
     return(
         <div className="form-box">
-            <label>Choose a patient</label>
             <br/>
-
             <Autocomplete
                 id="free-solo-demo"
                 freeSolo
@@ -33,18 +31,16 @@ function CreatePrescription() {
                 getOptionLabel={(option) => {  // show options (name and cpr)
                     return (`${option.name}: ${option.cpr}`)}
                 }
-                sx={{ width: 300 }}
-                // onInputChange={handleInputChange}
-                onChange={(event, value) => patient = value && console.log(patient)}
+                sx={{ width: 350}}
+                onChange={handleAutocomplete}
                 renderInput={(params) => <TextField {...params} label="Choose Patient" />}
             />
-            <p>You chose: {patient}</p>
             <br/>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <label> Create Prescription </label>
                 <input type="text"
                        placeholder="Choose Patient"
-                       value={patient}
+                       value={`${patient.name}: ${patient.cpr}`}
                        name="patient" {...register('patient', { required: true })}
                 />
                 <input type="text"
