@@ -1,6 +1,8 @@
 
 
 #footer__main{
-    background-color: cadetblue;
+    background: linear-gradient(90deg, rgb(110, 200, 254) 0%, rgba(73,63, 252, 1) 100%);
     grid-column: 1 / 13;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
 }

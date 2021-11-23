@@ -1,17 +1,16 @@
 body{
-    background-color: pink;
+    background-color:  #d6eaf8 ;
 }
 
 .rootLayout{
     display: grid;
-    grid-gap: 5px;
+    grid-gap: 7px;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: minmax(5vh, 14vh) 70vh minmax(5vh, 14vh);
+    grid-template-rows: minmax(5vh, 12vh)  69vh minmax(5vh, 15vh);
 }
-
 
 @media (max-width: 600px) {
     .rootLayout {
-        grid-template-rows: 7.5vh minmax(200px, auto) minmax(200px, auto) 7.5vh;
+        grid-template-rows: 10vh minmax(70vh, auto)  10vh;
     }
 }

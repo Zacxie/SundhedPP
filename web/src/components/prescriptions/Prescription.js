@@ -6,7 +6,7 @@ import {Button} from "@material-ui/core";
 class Prescription extends React.Component {
 
     onClick = (id) => {
-        let prescription = prescriptionStore.prescriptions.filter((prescription) => prescription.id == id)[0];
+        let prescription = prescriptionStore.prescriptions.filter((prescription) => prescription.id === id)[0];
         prescription.end_date.setDate(prescription.end_date.getDate() + 7);
         window.location.href = "/#/";
     }

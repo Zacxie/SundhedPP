@@ -1,0 +1,121 @@
+
+
+.Navbar {
+    background: linear-gradient(90deg, rgb(110, 200, 254) 0%, rgb(73,63, 252) 100%);
+    width: 98vw;
+    height: 80px;
+    font-family: Arial, Helvetica, SansSerif;
+    display: flex;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+
+.Navbar .RightSide {
+    flex: 45%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.Navbar .RightSide .Links {
+    max-height: 80px;
+}
+
+
+.Navbar .RightSide .Links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    margin-right: 25px;
+}
+
+.Navbar .RightSide .Links a:hover {
+    text-decoration: underline;
+}
+
+.fa-file-medical {
+    cursor: pointer;
+}
+
+
+.Navbar .RightSide button {
+    display: none;
+    margin-right: 20px;
+
+}
+
+.Navbar .RightSide #hidden {
+    display: flex;
+
+}
+
+.Navbar .LeftSide {
+    flex: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding-right: 25px;
+    padding-left: 15px;
+}
+
+.Navbar .LeftSide h1 {
+    padding-right: 10px;
+    font-size: 25px;
+}
+
+.Navbar .LeftSide a {
+    text-decoration: none;
+    color: white;
+}
+
+.Navbar .LeftSide .Searchbar {
+    padding-left: 10px;
+}
+
+
+
+@media only screen and (max-width: 850px) {
+    .Navbar .RightSide .Links a {
+        font-size: 13px;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .Navbar .RightSide .Links a {
+        font-size: 10px;
+    }
+}
+
+@media only screen and (max-width: 825px) {
+    .Navbar .RightSide button{
+        display: flex;
+        cursor: pointer;
+        font-size: large;
+        background-color: transparent;
+        border: none;
+    }
+
+    .Navbar .RightSide .Links {
+        display: none;
+    }
+
+    .Navbar .RightSide #hidden {
+        position: absolute;
+        z-index: 1000 !important;
+        left: 0;
+        top: 80px;
+        max-height: 230px;
+        width: 100%;
+        background: linear-gradient(90deg, rgb(110, 200, 254) 0%, rgb(73,63, 252) 100%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Navbar .RightSide #hidden a {
+        margin: 10px;
+        font-size: 20px;
+
+    }
+
+}
