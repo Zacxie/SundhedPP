@@ -1,4 +1,4 @@
-import Nav from './Nav';
+import Nav2 from './Nav2';
 import Dashboard from './Dashboard';
 import Footer from './Footer'
 
@@ -11,7 +11,6 @@ const MainLayout = ({overlay}) => {
 
         <div className="rootLayout">
             <Header/>
-            <Nav/>
             <Dashboard/>
             <Footer/>
             {overlay}

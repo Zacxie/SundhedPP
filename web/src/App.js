@@ -1,6 +1,6 @@
 import React from 'react';
-import './App.css';
-import LoginPage from "./loginPage";
+import '../src/styling/App.css';
+import LoginPage from "./components/loginPage";
 import MainLayout from './components/MainLayout'
 import {HashRouter, Route, Switch} from "react-router-dom";
 import CreatePatient from "./components/CreatePatient";
