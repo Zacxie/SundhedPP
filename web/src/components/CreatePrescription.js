@@ -11,7 +11,6 @@ function CreatePrescription() {
     const {register, handleSubmit} = useForm();
     const [patient, setPatient] = useState()
 
-
     const handleAutocomplete = (e, patient) => {
         setPatient(patient);
         console.log(patient);
@@ -41,7 +40,7 @@ function CreatePrescription() {
                 <label> Create Prescription </label>
                 <input type="text"
                        placeholder="Choose Patient"
-                       value={"" && (`${patient.name}: ${patient.cpr}`)} //(`${patient.name}: ${patient.cpr}`)
+                       value={ '' && (`${patient.name}: ${patient.cpr}`)} //(`${patient.name}: ${patient.cpr}`)
                        name="patient" {...register('patient', { required: true })}
                 />
                 <input type="text"
