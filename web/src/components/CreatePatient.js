@@ -1,5 +1,5 @@
 import React from "react"
-import { useForm } from 'react-hook-form';
+import {useForm} from 'react-hook-form';
 import {patientstore} from "../stores/PatientStore";
 import '../styling/Form.css'
 
@@ -12,7 +12,7 @@ function CreatePatient() {
         console.log(patient)
         patientstore.postPatient(patient)
     }
-    return(
+    return (
         <div className="form-box">
             <form onSubmit={handleSubmit(onSubmit)}>
                 <label> Create Patient </label>
@@ -24,7 +24,7 @@ function CreatePatient() {
                        name="cpr" {...register('cpr', {required: true, minLength: 11, maxLength: 11})}/>
 
 
-                <input type="submit" />
+                <input type="submit"/>
             </form>
         </div>
     )
