@@ -17,7 +17,6 @@ function CreatePrescription() {
         console.log(patient)
     }
 
-
     const onSubmit = (prescription) => {
         console.log(prescription)
         prescriptionStore.postPrescription(prescription)
@@ -26,6 +25,7 @@ function CreatePrescription() {
         <div className="form-box">
             <label>Choose a patient</label>
             <br/>
+
             <Autocomplete
                 id="free-solo-demo"
                 freeSolo
@@ -34,8 +34,8 @@ function CreatePrescription() {
                     return (`${option.name}: ${option.cpr}`)}
                 }
                 sx={{ width: 300 }}
-                onInputChange={handleInputChange}
-                // onChange={(event, value) => patient = value}
+                // onInputChange={handleInputChange}
+                onChange={(event, value) => patient = value && console.log(patient)}
                 renderInput={(params) => <TextField {...params} label="Choose Patient" />}
             />
             <p>You chose: {patient}</p>
@@ -44,6 +44,7 @@ function CreatePrescription() {
                 <label> Create Prescription </label>
                 <input type="text"
                        placeholder="Choose Patient"
+                       value={patient}
                        name="patient" {...register('patient', { required: true })}
                 />
                 <input type="text"
