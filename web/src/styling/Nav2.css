@@ -3,7 +3,7 @@
 .Navbar {
     background: linear-gradient(90deg, rgb(110, 200, 254) 0%, rgb(73,63, 252) 100%);
     width: 98vw;
-    height: 80px;
+    height: 100%;
     font-family: Arial, Helvetica, SansSerif;
     display: flex;
     border-top-left-radius: 7px;
@@ -18,7 +18,7 @@
 }
 
 .Navbar .RightSide .Links {
-    max-height: 80px;
+
 }
 
 
