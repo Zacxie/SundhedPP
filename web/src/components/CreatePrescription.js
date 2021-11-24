@@ -43,13 +43,13 @@ function CreatePrescription() {
                 renderInput={(params) => <TextField {...params} label="Choose Patient" />}
             />
             <form onSubmit={handleSubmit(onSubmit)}>
-                <input type="text"
+                <input type="date"
                        placeholder="Enter start-date (yyyy-MM-dd)"
-                       name="start-date" {...register('start-date', { required: true })} // pattern: /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/
+                       name="start-date" {...register('start-date', { required: true, pattern: "YYYY/DD/MM" })} // pattern: /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/
                 />
-                <input type="text"
+                <input type="date"
                        placeholder="Enter end-date (yyyy-MM-dd)"
-                       name="end-date" {...register('end-date', { required: true})} // pattern: /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/
+                       name="end-date" {...register('end-date', { required: true, pattern: "YYYY/DD/MM"})} // pattern: /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/
                 />
 
                 <textarea
