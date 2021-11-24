@@ -23,6 +23,8 @@ function CreatePrescription() {
     }
     return(
         <div className="form-box">
+            <label> Create Prescription </label>
+            <br/>
             <br/>
             <Autocomplete
                 id="free-solo-demo"
@@ -35,9 +37,7 @@ function CreatePrescription() {
                 onChange={handleAutocomplete}
                 renderInput={(params) => <TextField {...params} label="Choose Patient" />}
             />
-            <br/>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <label> Create Prescription </label>
                 <input type="text"
                        placeholder="Choose Patient"
                        value={ '' && (`${patient.name}: ${patient.cpr}`)} //(`${patient.name}: ${patient.cpr}`)
