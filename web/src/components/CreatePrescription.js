@@ -20,11 +20,11 @@ function CreatePrescription() {
 
 
     const onSubmit = (data) => {
-        let prescription = ;
-        console.log(data);
-        console.log(patient);
+        let prescription = data;
+        prescription['name'] = patient.name;
+        prescription['cpr'] = patient.cpr;
         console.log(prescription);
-        prescriptionStore.postPrescription();
+        prescriptionStore.postPrescription(prescription);
     }
     return(
         <div className="form-box">
