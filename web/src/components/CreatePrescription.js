@@ -20,10 +20,10 @@ function CreatePrescription() {
 
 
     const onSubmit = (data) => {
-        // let prescription = data.push(patient);
+        let prescription = ;
         console.log(data);
         console.log(patient);
-       // console.log(prescription);
+        console.log(prescription);
         prescriptionStore.postPrescription();
     }
     return(
