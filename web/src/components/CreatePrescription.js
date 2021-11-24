@@ -5,11 +5,12 @@ import {patientstore} from "../stores/PatientStore";
 import '../styling/Form.css'
 import {TextField} from "@material-ui/core";
 import {Autocomplete} from "@mui/material";
+import "react-datepicker/dist/react-datepicker.css";
 
 function CreatePrescription() {
 
     const {register, handleSubmit} = useForm();
-    const [patient, setPatient] = useState()
+    const [patient, setPatient] = useState();
 
     const handleAutocomplete = (e, patient) => {
         setPatient(patient);
@@ -47,7 +48,6 @@ function CreatePrescription() {
                        placeholder="Enter start-date (yyyy-MM-dd)"
                        name="start-date" {...register('start-date', { required: true, pattern: /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/ })}
                 />
-
                 <input type="text"
                        placeholder="Enter end-date (yyyy-MM-dd)"
                        name="end-date" {...register('end-date', { required: true, pattern: /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/ })}
