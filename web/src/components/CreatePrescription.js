@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import { useForm } from 'react-hook-form';
 import {prescriptionStore} from "../stores/PrescriptionStore";
 import {patientstore} from "../stores/PatientStore";
@@ -9,6 +9,7 @@ import "react-datepicker/dist/react-datepicker.css";
 
 function CreatePrescription() {
 
+
     const {register, handleSubmit} = useForm();
     const [patient, setPatient] = useState();
 
@@ -18,9 +19,12 @@ function CreatePrescription() {
     }
 
 
-    const onSubmit = (prescription) => {
-        console.log(prescription)
-        prescriptionStore.postPrescription(prescription)
+    const onSubmit = (data) => {
+        let prescription = data ;
+        console.log(data);
+        console.log(patient);
+        console.log(prescription);
+        prescriptionStore.postPrescription(prescription);
     }
     return(
         <div className="form-box">
@@ -40,17 +44,12 @@ function CreatePrescription() {
             />
             <form onSubmit={handleSubmit(onSubmit)}>
                 <input type="text"
-                       placeholder="Choose Patient"
-                       value={ '' && (`${patient.name}: ${patient.cpr}`)} //(`${patient.name}: ${patient.cpr}`)
-                       name="patient" {...register('patient', { required: true })}
-                />
-                <input type="text"
                        placeholder="Enter start-date (yyyy-MM-dd)"
-                       name="start-date" {...register('start-date', { required: true, pattern: /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/ })}
+                       name="start-date" {...register('start-date', { required: true })} // pattern: /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/
                 />
                 <input type="text"
                        placeholder="Enter end-date (yyyy-MM-dd)"
-                       name="end-date" {...register('end-date', { required: true, pattern: /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/ })}
+                       name="end-date" {...register('end-date', { required: true})} // pattern: /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/
                 />
 
                 <textarea
