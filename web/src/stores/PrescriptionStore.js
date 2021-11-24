@@ -72,7 +72,7 @@ class PrescriptionStore {
     }
 
     postPrescription(prescription) {
-        fetch(baseUrlProd + "/rest/prescription", {
+        fetch(baseUrlTest + "/rest/prescription", {
             method: 'POST',
             headers: {
                 'Accept' : 'application/json',

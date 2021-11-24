@@ -7,16 +7,7 @@ const baseUrlTest = "http://localhost:8080";//Base url til endpoint for at hente
 
 class PatientStore {
 
-    patients = [
-        {
-            name: 'Test Testesen',
-            cpr: '010200-1111',
-        },
-        {
-            name: 'Tester Testersen',
-            cpr: '110022-11'
-        }
-    ];
+    patients = [];
 
     constructor(props) {
         makeAutoObservable(this,{patients: observable},{autoBind:true});
