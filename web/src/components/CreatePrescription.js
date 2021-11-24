@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, { useState} from "react";
 import { useForm } from 'react-hook-form';
 import {prescriptionStore} from "../stores/PrescriptionStore";
 import {patientstore} from "../stores/PatientStore";
@@ -23,10 +23,11 @@ function CreatePrescription() {
         let prescription = data;
         prescription['name'] = patient.name;
         prescription['cpr'] = patient.cpr;
-        console.log(data);
-        console.log(patient.name);
         console.log(prescription);
         //prescriptionStore.postPrescription(prescription);
+        // let prescription = data.push(patient);
+       // console.log(prescription);
+        prescriptionStore.postPrescription();
     }
     return(
         <div className="form-box">
