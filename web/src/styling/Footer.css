@@ -5,4 +5,10 @@
     grid-column: 1 / 13;
     border-bottom-left-radius: 7px;
     border-bottom-right-radius: 7px;
+    font-size: 15px;
+    vertical-align: center;
+    color: white;
+    font-weight: normal;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
 }
+
