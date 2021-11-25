@@ -21,9 +21,7 @@ function CreatePrescription() {
 
     const onSubmit = (data) => {
         let prescription = data;
-        prescription['name'] = patient.name;
-        prescription['cpr'] = patient.cpr;
-        prescription['id'] = patient.id;
+        prescription['patient_id'] = patient.id;
         console.log(prescription);
         prescriptionStore.postPrescription(prescription);
     }
@@ -46,11 +44,11 @@ function CreatePrescription() {
             <form onSubmit={handleSubmit(onSubmit)}>
                 <input type="date"
                        placeholder="Enter start-date"
-                       name="start_date" {...register('start-date', { required: true, pattern: "YYYY/DD/MM" })} // pattern: /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/
+                       name="start_date" {...register('start_date', { required: true, pattern: "YYYY/DD/MM" })} // pattern: /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/
                 />
                 <input type="date"
                        placeholder="Enter end-date"
-                       name="end_date" {...register('end-date', { required: true, pattern: "YYYY/DD/MM"})} // pattern: /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/
+                       name="end_date" {...register('end_date', { required: true, pattern: "YYYY/DD/MM"})} // pattern: /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/
                 />
 
                 <textarea

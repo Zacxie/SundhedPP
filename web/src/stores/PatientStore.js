@@ -51,6 +51,7 @@ class PatientStore {
                     this.patients.push({
                             cpr:item.cpr,
                             name: item.name,
+                            id: item.id
                         }
                     )
                 });
