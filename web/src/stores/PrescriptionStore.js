@@ -69,6 +69,23 @@ class PrescriptionStore {
 
     constructor() {
         makeObservable(this, {prescriptions: observable});
+        this.fetchPrescriptions();
+    }
+
+    fetchPrescriptions() {
+        fetch(baseUrlTest + "/rest/prescription")
+            .then(response => {
+                if (!response.ok) {
+                    throw Error('Error');
+                }
+                return response.json()
+            }).then(data => {
+            this.forceReloadOrganization(data);
+            console.log(data);
+        }).catch(error => {
+            console.log(error)
+
+        });
     }
 
     postPrescription(prescription) {
@@ -81,6 +98,27 @@ class PrescriptionStore {
             body: JSON.stringify(prescription)
         }).then(res => res.json())
             .then(res => console.log(res));
+    }
+
+    forceReloadOrganization = (results) => {
+        {
+
+            if (results != "") {
+                results.map(item => {
+
+                    this.prescriptions.push({
+                            id: item.id,
+                            description: item.description,
+                            start_date: item.start_date,
+                            end_date: item.end_date,
+                            patient: item.patient_id
+
+                        }
+                    )
+                });
+            }
+
+        }
     }
 }
 

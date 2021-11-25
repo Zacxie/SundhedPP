@@ -8,7 +8,6 @@ const Dashboard = () => {
     return (
         <div id="dashboard__main">
             <h3>Dashboard</h3>
-            {/*<Search />*/}
             <HashRouter>
                 <Switch>
                     <Route path="/prescription/:id" component={Prescription}/>

@@ -6,7 +6,7 @@ const Footer = () => {
         <div id="footer__main">
             <br/>
             <Divider variant="middle" />
-            <h3>Footer</h3>
+                <h3>Footer</h3>
 
         </div>
     )
