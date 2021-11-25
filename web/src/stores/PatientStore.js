@@ -16,7 +16,7 @@ class PatientStore {
     }
 
     fetchPatients() {
-        fetch(baseUrlProd + "/rest/patient")
+        fetch(baseUrlTest + "/rest/patient")
             .then(response => {
                 if (!response.ok) {
                     throw Error('Error');
@@ -31,7 +31,7 @@ class PatientStore {
     }
 
     postPatient(patient) {
-        fetch(baseUrlProd + "/rest/patient", {
+        fetch(baseUrlTest + "/rest/patient", {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -51,6 +51,7 @@ class PatientStore {
                     this.patients.push({
                             cpr: item.cpr,
                             name: item.name,
+                            id: item.id
                         }
                     )
                 });

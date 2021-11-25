@@ -5,6 +5,7 @@ import MainLayout from './components/MainLayout'
 import {HashRouter, Route, Switch} from "react-router-dom";
 import CreatePatient from "./components/CreatePatient";
 import Error from "./Error";
+import CreatePrescription from "./components/CreatePrescription";
 
 function App() {
     return (
@@ -14,6 +15,7 @@ function App() {
                     <Switch>
                         <Route path="/login" component={LoginPage}/>
                         <Route path="/patients" component={CreatePatient}/>
+                        <Route path="/prescriptions" component={CreatePrescription}/>
                         <Route exact path="/" component={MainLayout}/>
                         <Route component={Error}/>
                     </Switch>

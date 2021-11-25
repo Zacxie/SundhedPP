@@ -17,6 +17,7 @@ function CreatePatient() {
             <form onSubmit={handleSubmit(onSubmit)}>
                 <label> Create Patient </label>
                 <input type="text"
+                       id="name"
                        placeholder="Enter name"
                        name="name" {...register('name', {required: true, pattern: /^[a-zA-Z\s]+$/})}/>
                 <input type="text"
