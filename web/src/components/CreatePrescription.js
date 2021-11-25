@@ -35,7 +35,7 @@ function CreatePrescription() {
                 freeSolo
                 options={patientstore.patients} // data
                 getOptionLabel={(option) => {  // show options (name and cpr)
-                    return (`${option.name}: ${option.cpr}: ${option.id} `)}
+                    return (`${option.name}: ${option.cpr}`)}
                 }
                 sx={{ width: 510}}
                 onChange={handleAutocomplete}
