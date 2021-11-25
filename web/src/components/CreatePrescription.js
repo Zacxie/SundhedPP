@@ -48,7 +48,7 @@ function CreatePrescription() {
                 />
                 <input type="date"
                        placeholder="Enter end-date"
-                       name="end_date" {...register('end_date', { required: true, pattern: "YYYY/DD/MM"})} // pattern: /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/
+                       name="end_date" {...register('end_date', { required: true, pattern: "YYYY/DD/MM" })} // pattern: /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/
                 />
 
                 <textarea
