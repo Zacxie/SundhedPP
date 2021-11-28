@@ -20,12 +20,9 @@ function PrescriptionsTable() {
 
     prescriptionStore.prescriptions.forEach((prescription) => {
         console.log(prescription);
-        console.log(JSON.stringify(prescription));
-        // let patient = patientstore.getById(prescription.patient.id);
-        // console.log(patient);
         rows.push({
             id: prescription.id,
-            patientName: prescription.id,
+            patientName: prescription.patient.name,
             startDate: new Date(prescription.start_date).toDateString(),
             endDate: new Date(prescription.end_date).toDateString(),
             description: prescription.description

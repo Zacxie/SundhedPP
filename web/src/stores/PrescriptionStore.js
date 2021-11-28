@@ -40,23 +40,17 @@ class PrescriptionStore {
     }
 
     forceReloadOrganization = (results) => {
-        {
-
-            if (results != "") {
-                results.map(item => {
-
-                    this.prescriptions.push({
-                            id: item.id,
-                            description: item.description,
-                            start_date: item.start_date,
-                            end_date: item.end_date,
-                            patient: item.patient_id
-
-                        }
-                    )
-                });
-            }
-
+        this.prescriptions = [];
+        if (results != "") {
+            results.map(item => {
+                this.prescriptions.push({
+                    id: item.id,
+                    description: item.description,
+                    start_date: item.start_date,
+                    end_date: item.end_date,
+                    patient: item.patient
+                })
+            });
         }
     }
 
