@@ -11,7 +11,7 @@ const LoginPage = () => {
     const history = useHistory();
 
     const handleClick = (props) => {
-            const baseURL = "http://localhost:3000/rest/oauth"
+            // const baseURL = "http://localhost:3000/rest/oauth"
 
             if (props === "dtu") {
                 // request dtu
@@ -56,7 +56,7 @@ const LoginPage = () => {
                 <div className="Oauth-Container">
                     <GitHubIcon onClick={() => handleClick("github")} fontSize="large"  />
 
-                    <img onClick={() => handleClick("dtu")} className="DTU-logo" src={logo} />
+                    <img onClick={() => handleClick("dtu")} className="DTU-logo" src={logo} alt="DTU Logo" />
                 </div>
 
             </header>
@@ -66,9 +66,3 @@ const LoginPage = () => {
 
 
 export default LoginPage;
-
-
-
-function userOauth(){
-
-}

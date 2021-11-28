@@ -10,8 +10,12 @@ function Nav2 () {
     return(
         <div className="Navbar">
             <div className="LeftSide">
-                <a className="fas fa-file-medical" href="/#/home"></a>
-                <h1 className="navbar-logo"><a href="/#/home">Sundhed++</a></h1>
+                <a href="/#/home">
+                    <div>
+                        <span className="fas fa-file-medical" />
+                        <h1 className="navbar-logo" style={{"display": "inline-block", "margin-left": "10px"}}>Sundhed++</h1>
+                    </div>
+                </a>
                 <div className="Searchbar">
                     <Search></Search>
                 </div>

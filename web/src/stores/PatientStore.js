@@ -1,8 +1,8 @@
 import {makeAutoObservable, observable} from "mobx"
 
 
-const baseUrlProd = "https://sundhedpp.fisk.devops.diplomportal.dk";
-const baseUrlTest = "http://localhost:8080";//Base url til endpoint for at hente data
+const baseUrl = "https://sundhedpp.fisk.devops.diplomportal.dk";
+// const baseUrl = "http://localhost:8080";//Base url til endpoint for at hente data
 
 
 class PatientStore {
@@ -16,7 +16,7 @@ class PatientStore {
     }
 
     fetchPatients() {
-        fetch(baseUrlProd + "/rest/patient")
+        fetch(baseUrl + "/rest/patient")
             .then(response => {
                 if (!response.ok) {
                     throw Error('Error');
@@ -31,7 +31,7 @@ class PatientStore {
     }
 
     postPatient(patient) {
-        fetch(baseUrlProd + "/rest/patient", {
+        fetch(baseUrl + "/rest/patient", {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -43,20 +43,15 @@ class PatientStore {
     }
 
     forceReloadOrganization = (results) => {
-        {
-
-            if (results != "") {
-                results.map(item => {
-
-                    this.patients.push({
-                            cpr: item.cpr,
-                            name: item.name,
-                            id: item.id
-                        }
-                    )
-                });
-            }
-
+        if (results !== "") {
+            results.forEach(item => {
+                this.patients.push({
+                        cpr: item.cpr,
+                        name: item.name,
+                        id: item.id
+                    }
+                )
+            });
         }
     }
 }
