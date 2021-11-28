@@ -62,7 +62,7 @@ class PatientStore {
     }
 
     getById(id) {
-        return this.patients.filter((patient) => { return patient.id == id; })[0];
+        return this.patients.filter((patient) => { return patient.id === id; })[0];
     }
 }
 

@@ -5,7 +5,6 @@ import {GridColDef} from "@mui/x-data-grid";
 
 import '../../styling/prescriptions/PrescriptionsTable.css'
 import {observer} from "mobx-react-lite";
-import {patientstore} from "../../stores/PatientStore";
 
 function PrescriptionsTable() {
 
