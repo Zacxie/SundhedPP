@@ -2,6 +2,7 @@ import React from "react"
 import {patientstore} from "../stores/PatientStore";
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
+import {observer} from "mobx-react-lite";
 
 
 function Search() {
@@ -23,8 +24,9 @@ function Search() {
 
                 patientstore.setSelectedId(newValue.id);
             }}
+            onFocus={() => {patientstore.fetchPatients()}}
         />
     )
 }
 
-export default Search;
+export default observer(Search);

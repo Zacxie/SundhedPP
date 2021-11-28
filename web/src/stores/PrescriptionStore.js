@@ -1,7 +1,7 @@
 import {makeObservable, observable} from "mobx";
 
-const baseUrlProd =  "https://sundhedpp.fisk.devops.diplomportal.dk";
-const baseUrlTest = "http://localhost:8080";//Base url til endpoint for at hente data
+const baseUrl =  "https://sundhedpp.fisk.devops.diplomportal.dk";
+// const baseUrl = "http://localhost:8080";//Base url til endpoint for at hente data
 
 class PrescriptionStore {
 
@@ -12,7 +12,7 @@ class PrescriptionStore {
     }
 
     fetchPrescriptions() {
-        fetch(baseUrlTest + "/rest/prescription")
+        fetch(baseUrl + "/rest/prescription")
             .then(response => {
                 if (!response.ok) {
                     throw Error('Error');
@@ -28,7 +28,7 @@ class PrescriptionStore {
     }
 
     postPrescription(prescription) {
-        fetch(baseUrlTest + "/rest/prescription", {
+        fetch(baseUrl + "/rest/prescription", {
             method: 'POST',
             headers: {
                 'Accept' : 'application/json',
@@ -41,21 +41,22 @@ class PrescriptionStore {
 
     forceReloadOrganization = (results) => {
         this.prescriptions = [];
-        if (results != "") {
-            results.map(item => {
+        if (results !== "") {
+            results.forEach(item => {
                 this.prescriptions.push({
-                    id: item.id,
-                    description: item.description,
-                    start_date: item.start_date,
-                    end_date: item.end_date,
-                    patient: item.patient
-                })
+                        id: item.id,
+                        description: item.description,
+                        start_date: item.start_date,
+                        end_date: item.end_date,
+                        patient: item.patient
+                    }
+                )
             });
         }
     }
 
     getByPatientId(id) {
-        fetch(baseUrlTest + '/rest/prescription/patient/' + id)
+        fetch(baseUrl + '/rest/prescription/patient/' + id)
             .then(response => {
                 if (!response.ok)
                     throw Error('Error while getting patients prescriptions');

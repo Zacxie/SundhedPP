@@ -11,14 +11,13 @@ describe("Render components on main page", () => {
         expect(screen.getByRole('heading', {name: /sundhed\+\+/i}));
         expect(screen.getByRole('link', {name: /home/i}));
         expect(screen.getByRole('link', {name: /profile/i}));
-        expect(screen.getByRole('link', {name: /dashboard/i}));
         expect(screen.getByRole('link', {name: /log out/i}));
     });
 
     test('render mainlayout elements', () => {
         render(<App/>);
-        expect(screen.getByRole('navigation'));
-        expect(screen.getByText('Footer')).toBeInTheDocument();
+        // expect(screen.getByRole('navigation'));
+        expect(screen.getByRole('contentinfo', {name: /footer/i}));
         expect(screen.getByRole('heading', {name: /dashboard/i}));
         expect(screen.getByRole('grid'))
     });
