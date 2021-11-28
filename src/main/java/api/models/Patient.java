@@ -12,7 +12,6 @@ import java.util.List;
 @Entity
 @Table(name = "patients")
 @JsonRootName(value = "patient")
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Patient {
     @Id @GeneratedValue @Column(name = "id")
     @JsonProperty("id")
