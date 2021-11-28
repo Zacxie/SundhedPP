@@ -5,7 +5,6 @@ class UserStore {
     state = true;
     alerts = false;
 
-
     constructor() {
         makeObservable(this, {token: observable, state: observable});
     }
