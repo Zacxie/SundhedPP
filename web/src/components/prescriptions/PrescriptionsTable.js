@@ -4,10 +4,18 @@ import React from "react";
 import {GridColDef} from "@mui/x-data-grid";
 
 import '../../styling/prescriptions/PrescriptionsTable.css'
+import RenewPrescription from "./RenewPrescription";
+import {userStore} from "../../stores/UserStore";
+
+
 
 class PrescriptionsTable extends React.Component {
 
-
+    setAlert = () =>{
+        console.log("row click")
+        console.log(userStore.alerts)
+        userStore.alerts = true
+    }
 
     redirect = (id) => {
         let path = "/#/prescription/" + id; // We use hashrouter
@@ -15,7 +23,6 @@ class PrescriptionsTable extends React.Component {
     }
 
     render() {
-
         const columns: GridColDef[] = [
             {field: 'patientName', headerName: 'Patient', width: 150},
             {field: 'startDate', headerName: 'Start Date', width: 150},
@@ -45,15 +52,17 @@ class PrescriptionsTable extends React.Component {
         return (
             <div className="prescriptions-table">
                 <DataGrid
-                    autoHeight
                     disableSelectionOnClick={true}
                     columns={columns}
                     rows={rows}
-                    onRowClick={(row) => this.redirect(row.id)}
+                    onRowClick={(row) => this.setAlert(row.id) }
                 />
+                <RenewPrescription/>
             </div>
         );
     }
 }
 
 export default PrescriptionsTable;
+
+

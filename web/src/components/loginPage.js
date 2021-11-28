@@ -3,29 +3,26 @@ import React from "react";
 import "../styling/Login.css"
 import logo from "../styling/Danmarks_Tekniske_Universitet_(logo).svg"
 import GitHubIcon from '@mui/icons-material/GitHub';
-import { useHistory } from 'react-router-dom';
+import {Redirect, useHistory} from 'react-router-dom';
 import {userStore} from "../stores/UserStore";
+import authService from "../services/auth.service";
+import RenewPrescription from "./prescriptions/RenewPrescription";
 
 
 const LoginPage = () => {
     const history = useHistory();
 
     const handleClick = (props) => {
-            const baseURL = "http://localhost:3000/rest/oauth"
 
             if (props === "dtu") {
                 // request dtu
-                //fetch(baseURL+"/dtu").then(response => data)
-                console.log("dtu")
-                userStore.users.find("s172133");
-                userStore.state = true;
 
-
+                authService.login("s172133","password");
+                userStore.state = userOauth(props);
 
             } else if (props === "github") {
                 // request github
-                //fetch(baseURL+"/github").then(response => console.log)
-                console.log("github")
+                //userStore.state = userOauth("github");
 
             } else {
                 // request local
@@ -54,7 +51,7 @@ const LoginPage = () => {
                     <Button variant="outlined" onClick={() => handleClick("local")}>Login</Button>
                 </div>
                 <div className="Oauth-Container">
-                    <GitHubIcon onClick={() => handleClick("github")} fontSize="large"  />
+                    {/* <GitHubIcon onClick={() => handleClick("github")} fontSize="large"  /> */}
 
                     <img onClick={() => handleClick("dtu")} className="DTU-logo" src={logo} />
                 </div>
@@ -69,6 +66,36 @@ export default LoginPage;
 
 
 
-function userOauth(){
+function userOauth(type){
+    const baseURL = "http://localhost:3000/rest/oauth"
+    let auth = true;
+    // fetch/redirect to Oauth dtu
+    if(type === "dtu"){
+        //dtu
 
+        // fetch api oauth
+        // give token
+
+
+
+        // expiration set to 1 minutes
+        let now = new Date() - (2 * 60000);
+        let authLogin = true;
+
+
+        let cookielogin = "login=" + authLogin;
+        let cookieexpiration = "expires="+now;
+        let cookiestring = cookielogin + cookieexpiration;
+        document.cookie = cookiestring;
+
+
+
+    } else {
+        // github
+
+        // not implemented
+    }
+
+
+    return auth;
 }
