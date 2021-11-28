@@ -12,12 +12,17 @@ function Search() {
             freeSolo
             options={patientstore.patients} // data
             getOptionLabel={(option) => {  // show options (name and cpr)
-                return (`${option.name}: ${option.cpr}`)
-            }
+                    return (`${option.name}: ${option.cpr}`)
+                }
             }
             sx={{width: 300}}
             renderInput={(params) => <TextField {...params} label="Søg patient"/>}
+            onChange={(event, newValue) => {
+                if (newValue === null)
+                    return;
 
+                patientstore.setSelectedId(newValue.id);
+            }}
         />
     )
 }

@@ -7,7 +7,9 @@ import org.hibernate.Session;
 import javax.persistence.*;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import javax.ws.rs.NotFoundException;
+import javax.xml.crypto.Data;
 import java.util.Date;
 import java.util.List;
 
@@ -53,10 +55,26 @@ public class Prescription {
         CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
         CriteriaQuery<Prescription> criteria = criteriaBuilder.createQuery(Prescription.class);
         criteria.from(Prescription.class);
-        return session.createQuery(criteria).getResultList();
+        List<Prescription> list = session.createQuery(criteria).getResultList();
+        DatabaseHelper.closeSession(session);
+        return list;
     }
 
     public static Prescription getById(int id) {
-        return DatabaseHelper.getSession().find(Prescription.class, id);
+        Session session = DatabaseHelper.getSession();
+        Prescription prescription = session.find(Prescription.class, id);
+        DatabaseHelper.closeSession(session);
+        return prescription;
+    }
+
+    public static List<Prescription> getByPatientId(int id ) {
+        Session session = DatabaseHelper.getSession();
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<Prescription> criteria = builder.createQuery(Prescription.class);
+        Root<Prescription> from = criteria.from(Prescription.class);
+        criteria.where(builder.equal(from.get("patient"), id));
+        List<Prescription> list = session.createQuery(criteria).getResultList();
+        DatabaseHelper.closeSession(session);
+        return list;
     }
 }
