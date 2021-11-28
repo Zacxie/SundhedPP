@@ -1,13 +1,15 @@
 import {makeAutoObservable, observable} from "mobx"
+import {prescriptionStore} from "./PrescriptionStore";
 
 
-// const baseUrl = "https://sundhedpp.fisk.devops.diplomportal.dk";
-const baseUrl = "http://localhost:8080";//Base url til endpoint for at hente data
+const baseUrl = "https://sundhedpp.fisk.devops.diplomportal.dk";
+// const baseUrl = "http://localhost:8080";//Base url til endpoint for at hente data
 
 
 class PatientStore {
 
     patients = [];
+    selectedId = 0;
 
     constructor(props) {
         makeAutoObservable(this, {patients: observable}, {autoBind: true});
@@ -52,6 +54,15 @@ class PatientStore {
                 )
             });
         }
+    }
+
+    setSelectedId(id) {
+        this.selectedId = id;
+        prescriptionStore.getByPatientId(id);
+    }
+
+    getById(id) {
+        return this.patients.filter((patient) => { return patient.id === id; })[0];
     }
 }
 
