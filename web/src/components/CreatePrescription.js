@@ -55,6 +55,11 @@ function CreatePrescription() {
                           placeholder="Enter a description"
                           name="description" {...register('description')}
                 />
+
+                <textarea
+                    placeholder="Enter a diagnosis"
+                    name="diagnosis" {...register('diagnosis')}
+                />
                 <input type="submit" />
             </form>
         </div>
