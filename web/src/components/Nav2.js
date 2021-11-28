@@ -8,6 +8,11 @@ function Nav2 () {
 
     const [showLinks, setShowLinks] = useState(false);
 
+    const removeToken = () => {
+        userStore.state = false;
+        userStore.token = ""
+    }
+
     return(
         <div className="Navbar">
             <div className="LeftSide">
@@ -22,7 +27,7 @@ function Nav2 () {
                     <a href="/#/home">Home</a>
                     <a href="/#/profile">Profile</a>
                     <a href="/#/patients">Create Patient</a>
-                    <a href="/#/log-out">Log out</a>
+                    <a onClick={removeToken} href="/#/login">Log out</a>
                 </div>
                 <button onClick={ () => setShowLinks(!showLinks)}><DehazeSharpIcon/></button>
         </div>

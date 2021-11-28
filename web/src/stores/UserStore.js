@@ -1,15 +1,13 @@
 import {makeObservable, observable} from "mobx";
 
 class UserStore {
-    users = [];
     token = "false";
-    secret = "";
     state = true;
     alerts = false;
 
 
     constructor() {
-        makeObservable(this, {users: observable, token: observable, state: observable});
+        makeObservable(this, {token: observable, state: observable});
     }
 }
 

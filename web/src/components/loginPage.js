@@ -17,10 +17,8 @@ const LoginPage = () => {
                 // request dtu
                 //fetch(baseURL+"/dtu").then(response => data)
                 console.log("dtu")
-                userStore.users.find("s172133");
+
                 userStore.state = true;
-
-
 
             } else if (props === "github") {
                 // request github
@@ -30,6 +28,7 @@ const LoginPage = () => {
             } else {
                 // request local
                 console.log("local")
+
 
             }
         if(userStore.state === true) {
