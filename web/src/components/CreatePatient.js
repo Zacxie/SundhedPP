@@ -6,7 +6,7 @@ import '../styling/Form.css'
 
 function CreatePatient() {
 
-    const {register, handleSubmit, errors} = useForm();
+    const {register, handleSubmit} = useForm();
 
     const onSubmit = (patient) => {
         console.log(patient)

@@ -1,4 +1,3 @@
-import Nav2 from './Nav2';
 import Dashboard from './Dashboard';
 import Footer from './Footer'
 
