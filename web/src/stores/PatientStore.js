@@ -1,8 +1,8 @@
 import {makeAutoObservable, observable} from "mobx"
 
 
-const baseUrl = "https://sundhedpp.fisk.devops.diplomportal.dk";
-// const baseUrl = "http://localhost:8080";//Base url til endpoint for at hente data
+// const baseUrl = "https://sundhedpp.fisk.devops.diplomportal.dk";
+const baseUrl = "http://localhost:8080";//Base url til endpoint for at hente data
 
 
 class PatientStore {
@@ -11,8 +11,6 @@ class PatientStore {
 
     constructor(props) {
         makeAutoObservable(this, {patients: observable}, {autoBind: true});
-        this.fetchPatients();
-
     }
 
     fetchPatients() {
@@ -44,6 +42,7 @@ class PatientStore {
 
     forceReloadOrganization = (results) => {
         if (results !== "") {
+            this.patients = [];
             results.forEach(item => {
                 this.patients.push({
                         cpr: item.cpr,

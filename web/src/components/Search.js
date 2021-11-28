@@ -2,6 +2,7 @@ import React from "react"
 import {patientstore} from "../stores/PatientStore";
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
+import {observer} from "mobx-react-lite";
 
 
 function Search() {
@@ -17,9 +18,9 @@ function Search() {
             }
             sx={{width: 300}}
             renderInput={(params) => <TextField {...params} label="Søg patient"/>}
-
+            onFocus={() => {patientstore.fetchPatients()}}
         />
     )
 }
 
-export default Search;
+export default observer(Search);
