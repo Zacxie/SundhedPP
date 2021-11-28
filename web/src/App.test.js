@@ -1,8 +1,9 @@
 import React from 'react';
-import {fireEvent, getByLabelText, render, screen} from '@testing-library/react';
+import {act, fireEvent, getAllByRole, getByLabelText, render, screen, within} from '@testing-library/react';
 import '@testing-library/jest-dom'
 import App from './App';
 import "@testing-library/jest-dom/extend-expect";
+import userEvent from "@testing-library/user-event";
 
 describe("Render components on main page", () => {
 
@@ -32,12 +33,29 @@ describe("Render components on main page", () => {
 
 })
 
-test('list prescriptions for patient', () => {
+test('list prescriptions for patient', async () => {
     render(<App/>);
-    /*const inputField = screen.getByRole('textbox', {  name: /søg patient/i});
+ /*   const autocomplete = screen.getByTestId("autocomplete");
+    const input = within(autocomplete).getByRole("textbox");
 
-    fireEvent.change(inputField, {target: {value: 'Mikkel'}});
-    expect(inputField).toBe('Mikkel');*/
+    //userEvent.type(inputField, 'Mikkel')
+    autocomplete.click();
+    autocomplete.focus();
+
+    fireEvent.change(await input, { target: { value: "Mikkel" } });
+
+
+    // navigate to the first item in the autocomplete box
+    fireEvent.keyDown(await autocomplete, {key: 'ArrowDown'})
+    // select the first item
+    fireEvent.keyDown(await autocomplete, { key: 'Enter' })
+
+    await screen.getByRole('')
+*/
+
+
+
+
 });
 
 test('renew prescription', () => {
