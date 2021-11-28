@@ -13,7 +13,7 @@ function Nav2 () {
                 <a href="/#/home">
                     <div>
                         <span className="fas fa-file-medical" />
-                        <h1 className="navbar-logo" style={{"display": "inline-block", "margin-left": "10px"}}>Sundhed++</h1>
+                        <h1 className="navbar-logo" style={{"display": "inline-block", "marginLeft": "10px"}}>Sundhed++</h1>
                     </div>
                 </a>
                 <div className="Searchbar">
