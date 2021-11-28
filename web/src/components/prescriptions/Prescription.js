@@ -24,3 +24,5 @@ class Prescription extends React.Component {
 }
 
 export default withRouter(Prescription)
+
+
