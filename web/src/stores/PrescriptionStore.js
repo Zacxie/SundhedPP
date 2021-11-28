@@ -73,7 +73,7 @@ class PrescriptionStore {
     }
 
     fetchPrescriptions() {
-        fetch(baseUrlTest + "/rest/prescription")
+        fetch(baseUrlProd + "/rest/prescription")
             .then(response => {
                 if (!response.ok) {
                     throw Error('Error');
@@ -89,7 +89,7 @@ class PrescriptionStore {
     }
 
     postPrescription(prescription) {
-        fetch(baseUrlTest + "/rest/prescription", {
+        fetch(baseUrlProd + "/rest/prescription", {
             method: 'POST',
             headers: {
                 'Accept' : 'application/json',
