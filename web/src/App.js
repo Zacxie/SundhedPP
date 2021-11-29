@@ -5,6 +5,7 @@ import MainLayout from './components/MainLayout'
 import {HashRouter, Route, Switch, Redirect} from "react-router-dom";
 import {userStore} from "./stores/UserStore";
 import Error from "./Error";
+import CreatePrescription from "./components/CreatePrescription";
 
 function App() {
     return (
@@ -13,7 +14,6 @@ function App() {
                 <HashRouter>
                     <Switch>
                         <Route path="/login" component={LoginPage}/>
-
                         <Route exact path="/"
                                render={() => (
                                    userStore.state ? (
@@ -24,6 +24,8 @@ function App() {
                                        <Redirect to="/login"/>
                                    )
                                )}/>
+                        <Route path="/patients" component={CreatePatient}/>
+                        <Route path="/prescriptions" component={CreatePrescription}/>
                         <Route component={Error}/>
                     </Switch>
                 </HashRouter>

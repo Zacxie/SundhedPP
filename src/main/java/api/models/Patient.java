@@ -12,7 +12,6 @@ import java.util.List;
 @Entity
 @Table(name = "patients")
 @JsonRootName(value = "patient")
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Patient {
     @Id @GeneratedValue @Column(name = "id")
     @JsonProperty("id")
@@ -49,6 +48,9 @@ public class Patient {
     }
 
     public static Patient getById(int id) {
-        return DatabaseHelper.getSession().find(Patient.class, id);
+        Session session = DatabaseHelper.getSession();
+        Patient patient = session.find(Patient.class, id);
+        DatabaseHelper.closeSession(session);
+        return patient;
     }
 }

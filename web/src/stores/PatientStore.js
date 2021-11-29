@@ -1,22 +1,22 @@
 import {makeAutoObservable, observable} from "mobx"
+import {prescriptionStore} from "./PrescriptionStore";
 
 
-const baseUrlProd = "https://sundhedpp.fisk.devops.diplomportal.dk";
-const baseUrlTest = "http://localhost:8080";//Base url til endpoint for at hente data
+const baseUrl = "https://sundhedpp.fisk.devops.diplomportal.dk";
+// const baseUrl = "http://localhost:8080";//Base url til endpoint for at hente data
 
 
 class PatientStore {
 
     patients = [];
+    selectedId = 0;
 
     constructor(props) {
         makeAutoObservable(this, {patients: observable}, {autoBind: true});
-        this.fetchPatients();
-
     }
 
     fetchPatients() {
-        fetch(baseUrlProd + "/rest/patient")
+        fetch(baseUrl + "/rest/patient")
             .then(response => {
                 if (!response.ok) {
                     throw Error('Error');
@@ -31,7 +31,7 @@ class PatientStore {
     }
 
     postPatient(patient) {
-        fetch(baseUrlProd + "/rest/patient", {
+        fetch(baseUrl + "/rest/patient", {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -43,20 +43,26 @@ class PatientStore {
     }
 
     forceReloadOrganization = (results) => {
-        {
-
-            if (results != "") {
-                results.map(item => {
-
-                    this.patients.push({
-                            cpr: item.cpr,
-                            name: item.name,
-                        }
-                    )
-                });
-            }
-
+        if (results !== "") {
+            this.patients = [];
+            results.forEach(item => {
+                this.patients.push({
+                        cpr: item.cpr,
+                        name: item.name,
+                        id: item.id
+                    }
+                )
+            });
         }
+    }
+
+    setSelectedId(id) {
+        this.selectedId = id;
+        prescriptionStore.getByPatientId(id);
+    }
+
+    getById(id) {
+        return this.patients.filter((patient) => { return patient.id === id; })[0];
     }
 }
 

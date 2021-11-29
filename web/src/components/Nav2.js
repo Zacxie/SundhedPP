@@ -16,18 +16,22 @@ function Nav2 () {
     return(
         <div className="Navbar">
             <div className="LeftSide">
-                <a className="fas fa-file-medical" href="/#/home"></a>
-                <h1 className="navbar-logo"><a href="/#/home">Sundhed++</a></h1>
+                <a href="/#/">
+                    <div>
+                        <span className="fas fa-file-medical" />
+                        <h1 className="navbar-logo" style={{"display": "inline-block", "marginLeft": "10px"}}>Sundhed++</h1>
+                    </div>
+                </a>
                 <div className="Searchbar">
                     <Search></Search>
                 </div>
             </div>
             <div className="RightSide">
                 <div className="Links" id={showLinks ? "hidden" : ""}>
-                    <a href="/#/home">Home</a>
-                    <a href="/#/profile">Profile</a>
                     <a href="/#/patients">Create Patient</a>
+                    <a href="/#/prescriptions">Create Prescription</a>
                     <a onClick={removecookie} href="/#/login">Log out</a>
+
                 </div>
                 <button onClick={ () => setShowLinks(!showLinks)}><DehazeSharpIcon/></button>
         </div>

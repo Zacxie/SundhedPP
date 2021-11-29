@@ -7,7 +7,6 @@ import '../styling/Dashboard.css'
 const Dashboard = () => {
     return (
         <div id="dashboard__main">
-            {/*<Search />*/}
             <NewPrescriptionTable/>
         </div>
     )

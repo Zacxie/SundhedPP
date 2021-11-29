@@ -1,5 +1,5 @@
 import {render, screen} from "@testing-library/react";
-import Loginpage from "./loginPage";
+import Loginpage from "./components/loginPage";
 import React from "react";
 import '@testing-library/jest-dom'
 import "@testing-library/jest-dom/extend-expect";

@@ -27,6 +27,12 @@ public class PrescriptionService {
         return prescription;
     }
 
+    @GET
+    @Path("/patient/{patientId}")
+    public List<Prescription> getPatientPrescriptions(@PathParam("patientId") String id) {
+        return Prescription.getByPatientId(Integer.parseInt(id));
+    }
+
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public Prescription createPrescription(Prescription prescription) {
