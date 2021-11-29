@@ -6,6 +6,7 @@ import {HashRouter, Route, Switch, Redirect} from "react-router-dom";
 import {userStore} from "./stores/UserStore";
 import Error from "./Error";
 import CreatePrescription from "./components/CreatePrescription";
+import CreatePatient from "./components/CreatePatient";
 
 function App() {
     return (

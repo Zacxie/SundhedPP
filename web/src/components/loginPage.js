@@ -1,7 +1,7 @@
 import {TextField, Button} from "@material-ui/core";
 import React from "react";
 import "../styling/Login.css"
-import logo from "../styling/Danmarks_Tekniske_Universitet_(logo).svg"
+import logo from "../styling/Danmarks_Tekniske_Universitet_logo.svg"
 import GitHubIcon from '@mui/icons-material/GitHub';
 import {Redirect, useHistory} from 'react-router-dom';
 import {userStore} from "../stores/UserStore";
