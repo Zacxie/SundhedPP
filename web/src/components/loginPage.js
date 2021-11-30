@@ -1,12 +1,10 @@
-import {TextField, Button} from "@material-ui/core";
+import {Button, TextField} from "@material-ui/core";
 import React from "react";
 import "../styling/Login.css"
 import logo from "../styling/Danmarks_Tekniske_Universitet_logo.svg"
-import GitHubIcon from '@mui/icons-material/GitHub';
-import {Redirect, useHistory} from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 import {userStore} from "../stores/UserStore";
 import authService from "../services/auth.service";
-import RenewPrescription from "./prescriptions/RenewPrescription";
 
 
 const LoginPage = () => {
@@ -14,24 +12,24 @@ const LoginPage = () => {
 
     const handleClick = (props) => {
 
-            if (props === "dtu") {
-                // request dtu
+        if (props === "dtu") {
+            // request dtu
 
-                authService.login("s172133","password");
-                userStore.state = userOauth(props);
+            authService.login("s172133", "password");
+            userStore.state = userOauth(props);
 
-            } else if (props === "github") {
-                // request github
-                //userStore.state = userOauth("github");
+        } else if (props === "github") {
+            // request github
+            //userStore.state = userOauth("github");
 
-            } else {
-                // request local
-                console.log("local")
+        } else {
+            // request local
+            console.log("local")
 
-            }
-        if(userStore.state === true) {
+        }
+        if (userStore.state === true) {
             history.push("/");
-        } else{
+        } else {
             history.push("/login");
         }
     }
@@ -53,7 +51,7 @@ const LoginPage = () => {
                 <div className="Oauth-Container">
                     {/* <GitHubIcon onClick={() => handleClick("github")} fontSize="large"  /> */}
 
-                    <img onClick={() => handleClick("dtu")} className="DTU-logo" src={logo} alt="DTU Logo" />
+                    <img onClick={() => handleClick("dtu")} className="DTU-logo" src={logo} alt="DTU Logo"/>
                 </div>
 
             </header>
@@ -65,17 +63,15 @@ const LoginPage = () => {
 export default LoginPage;
 
 
-
-function userOauth(type){
-    const baseURL = "http://localhost:3000/rest/oauth"
+function userOauth(type) {
+    //const baseURL = "http://localhost:3000/rest/oauth"
     let auth = true;
     // fetch/redirect to Oauth dtu
-    if(type === "dtu"){
+    if (type === "dtu") {
         //dtu
 
         // fetch api oauth
         // give token
-
 
 
         // expiration set to 1 minutes
@@ -84,10 +80,9 @@ function userOauth(type){
 
 
         let cookielogin = "login=" + authLogin;
-        let cookieexpiration = "expires="+now;
-        let cookiestring = cookielogin + cookieexpiration;
-        document.cookie = cookiestring;
-
+        let cookieexpiration = "expires=" + now;
+        //let cookiestring = cookielogin + cookieexpiration;
+        document.cookie = cookielogin + cookieexpiration;
 
 
     } else {
