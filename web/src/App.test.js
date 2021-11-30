@@ -67,7 +67,6 @@ describe("Search for patients and list prescriptions", () => {
         fireEvent.keyDown(await autocomplete, {key: 'Enter'})
         await delay(2000);
 
-
         expect(screen.getByRole('cell', {name: /fri nov 05 2021/i}))
         expect(screen.getByRole('cell', {name: /sun dec 05 2021/i}))
 
