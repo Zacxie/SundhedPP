@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 import Search from './Search';
 import DehazeSharpIcon from '@mui/icons-material/DehazeSharp';
 
-function Nav2 () {
+function Navbar () {
 
     const [showLinks, setShowLinks] = useState(false);
 
@@ -32,4 +32,4 @@ function Nav2 () {
     )
 }
 
-export default Nav2
+export default Navbar
