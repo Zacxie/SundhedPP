@@ -35,18 +35,19 @@ test('list prescriptions for patient', async () => {
     render(<App/>);
     /*   const autocomplete = screen.getByTestId("autocomplete");
        const input = within(autocomplete).getByRole("textbox");
+       const delay = ms => new Promise(res => setTimeout(res, ms));
 
-       //userEvent.type(inputField, 'Mikkel')
        autocomplete.click();
        autocomplete.focus();
 
        fireEvent.change(await input, { target: { value: "Mikkel" } });
+       await delay(2000);
 
 
        // navigate to the first item in the autocomplete box
        fireEvent.keyDown(await autocomplete, {key: 'ArrowDown'})
-       // select the first item
        fireEvent.keyDown(await autocomplete, { key: 'Enter' })
+       await delay(1000);
 
        await screen.getByRole('')
    */
