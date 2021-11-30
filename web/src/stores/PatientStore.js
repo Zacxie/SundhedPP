@@ -11,7 +11,7 @@ class PatientStore {
     patients = [];
     selectedId = 0;
 
-    constructor(props) {
+    constructor() {
         makeAutoObservable(this, {patients: observable}, {autoBind: true});
     }
 
