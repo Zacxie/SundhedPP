@@ -1,4 +1,4 @@
-import '../styling/Nav2.css';
+import '../styling/Navbar.css';
 import React, {useState} from 'react';
 import Search from './Search';
 import DehazeSharpIcon from '@mui/icons-material/DehazeSharp';
@@ -13,7 +13,7 @@ function Navbar () {
                 <a href="/#/">
                     <div>
                         <span className="fas fa-file-medical" />
-                        <h1 className="navbar-logo">Sundhed++</h1>
+                        <h1 className="navbar-logo" >Sundhed++</h1>
                     </div>
                 </a>
                 <div className="Searchbar">
