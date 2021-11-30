@@ -15,7 +15,7 @@ const NewPrescriptionTable = () => {
         setOpen(current => !current)
         setSelect(rowID)
         let prescription = prescriptionStore.prescriptions.filter((prescription) => prescription.id === rowID)[0];
-        const waitSet = await setPatient(current => prescription)
+        await setPatient(prescription)
 
     }
     const onClose = () => {
@@ -28,7 +28,7 @@ const NewPrescriptionTable = () => {
         prescription.end_date = value;
 
         // set instruction for prescription
-        if (text != "") {
+        if (text !== "") {
             let prescription_text = prescriptionStore.prescriptions.filter((prescription) => prescription.id === rowID)[0];
             prescription_text.instructions = text;
         }
