@@ -30,23 +30,51 @@ describe("Render components on main page", () => {
 
 })
 
-test('Search for patient', async () => {
-    render(<App/>);
-    const autocomplete = screen.getByTestId("autocomplete");
-    const input = within(autocomplete).getByRole("textbox");
-    const delay = ms => new Promise(res => setTimeout(res, ms));
+describe("Search for patients and list prescriptions", () => {
 
-    autocomplete.click();
-    autocomplete.focus();
+    test('Search for patient', async () => {
+        render(<App/>);
+        const autocomplete = screen.getByTestId("autocomplete");
+        const input = within(autocomplete).getByRole("textbox");
+        const delay = ms => new Promise(res => setTimeout(res, ms));
 
-    fireEvent.change(await input, {target: {value: "Mikkel"}});
-    await delay(1000);
+        autocomplete.click();
+        autocomplete.focus();
 
-    fireEvent.keyDown(await autocomplete, {key: 'ArrowDown'})
-    fireEvent.keyDown(await autocomplete, {key: 'Enter'})
-    await delay(1000);
+        fireEvent.change(await input, {target: {value: "Mikkel"}});
+        await delay(1000);
 
-    expect(input.value).toEqual("Mikkel Jensen: 170390-2839")
-});
+        fireEvent.keyDown(await autocomplete, {key: 'ArrowDown'})
+        fireEvent.keyDown(await autocomplete, {key: 'Enter'})
+        await delay(1000);
+
+        expect(input.value).toEqual("Mikkel Jensen: 170390-2839")
+    });
+
+    test('Show patient prescriptions', async () => {
+        render(<App/>);
+        const autocomplete = screen.getByTestId("autocomplete");
+        const input = within(autocomplete).getByRole("textbox");
+        const delay = ms => new Promise(res => setTimeout(res, ms));
+
+        autocomplete.click();
+        autocomplete.focus();
+
+        fireEvent.change(await input, {target: {value: "Mikkel"}});
+        await delay(1000);
+
+        fireEvent.keyDown(await autocomplete, {key: 'ArrowDown'})
+        fireEvent.keyDown(await autocomplete, {key: 'Enter'})
+        await delay(2000);
+
+
+        expect(screen.getByRole('cell', {name: /fri nov 05 2021/i}))
+        expect(screen.getByRole('cell', {name: /sun dec 05 2021/i}))
+
+        expect(screen.getByRole('cell', {name: /sun oct 17 2021/i}))
+        expect(screen.getByRole('cell', {name: /thu mar 03 2022/i}))
+    });
+})
+
 
 
