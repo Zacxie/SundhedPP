@@ -5,6 +5,7 @@ import api.models.Patient;
 import api.models.Prescription;
 import api.models.User;
 import database.DatabaseHelper;
+import io.prometheus.client.Summary;
 import kong.unirest.Config;
 import kong.unirest.Unirest;
 
@@ -22,6 +23,9 @@ import java.io.IOException;
 @Path("/oauth")
 public class OauthService {
 
+    static final Summary redirectLatency = Summary.build()
+            .name("redirect_latency_seconds").help("Request latency in seconds.").register();
+
     String baseURL = "http://localhost:8080/rest/oauth";
     String baseAuth = "https://auth.dtu.dk/dtu/?service=";
 
@@ -35,30 +39,35 @@ public class OauthService {
     @GET
     @Path("/redirect")
     public Response callback(@QueryParam("ticket") String ticket){
-        OkHttpClient client = new OkHttpClient();
-        String url = baseAuth + baseURL + "&ticket=" + ticket;
-        Request request = new Request.Builder().url(url).build();
+        Summary.Timer redirectTimer = redirectLatency.startTimer();
         try {
-            okhttp3.Response response = client.newCall(request).execute();
-            String validationReply = response.body().string();
-            String[] validationArray = validationReply.split("\n");
-            String frontUrl = (baseURL == null) ? "" : baseURL;
-            String jwtToken = "";
-            //STEP 4: Issue Token and redirect to frontpage including token in url:
-            if (validationArray.length == 2 && validationArray[0].toLowerCase().trim().equals("yes")) { //Login success
-                User user = resolveUser(validationArray[1].trim()); //validationArray[1] contains campusnet username.
+            OkHttpClient client = new OkHttpClient();
+            String url = baseAuth + baseURL + "&ticket=" + ticket;
+            Request request = new Request.Builder().url(url).build();
+            try {
+                okhttp3.Response response = client.newCall(request).execute();
+                String validationReply = response.body().string();
+                String[] validationArray = validationReply.split("\n");
+                String frontUrl = (baseURL == null) ? "" : baseURL;
+                String jwtToken = "";
+                //STEP 4: Issue Token and redirect to frontpage including token in url:
+                if (validationArray.length == 2 && validationArray[0].toLowerCase().trim().equals("yes")) { //Login success
+                    User user = resolveUser(validationArray[1].trim()); //validationArray[1] contains campusnet username.
 
-                jwtToken = new JWTHandler().generateJwtToken(user);
-                //Generating redirection page and returning it.
-                String html = baseURL + "?token=" + jwtToken;
-                return Response.ok().entity(html)
-                        .header("Authorization", "Bearer " + jwtToken)
-                        .build();
-            } else {
-                return Response.status(401).entity("Login failed, reply was: "  + validationReply + "<br><a href='" + frontUrl +"'>Return to frontPage</a>").build();
+                    jwtToken = new JWTHandler().generateJwtToken(user);
+                    //Generating redirection page and returning it.
+                    String html = baseURL + "?token=" + jwtToken;
+                    return Response.ok().entity(html)
+                            .header("Authorization", "Bearer " + jwtToken)
+                            .build();
+                } else {
+                    return Response.status(401).entity("Login failed, reply was: " + validationReply + "<br><a href='" + frontUrl + "'>Return to frontPage</a>").build();
+                }
+            } catch (IOException e) {
+                return Response.serverError().entity("Could not connect to campusnet-auth").build();
             }
-        } catch (IOException e) {
-            return Response.serverError().entity("Could not connect to campusnet-auth").build();
+        } finally {
+            redirectTimer.observeDuration();
         }
     }
 

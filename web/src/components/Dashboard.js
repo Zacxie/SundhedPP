@@ -1,6 +1,6 @@
-import Prescription from "./prescriptions/Prescription";
+
 import newPrescriptionsTable from "./prescriptions/newPrescriptionTable";
-import {HashRouter, Route, Switch} from "react-router-dom";
+import {Route} from "react-router-dom";
 
 import '../styling/Dashboard.css'
 

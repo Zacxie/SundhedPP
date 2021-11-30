@@ -1,9 +1,7 @@
 import React, {useState} from "react";
 import {DataGrid, GridColDef, GridRowsProp} from "@mui/x-data-grid";
 import {prescriptionStore} from "../../stores/PrescriptionStore";
-import RenewPrescription from "./RenewPrescription";
 import '../../styling/prescriptions/PrescriptionsTable.css'
-import {waitFor} from "@testing-library/react";
 import Async from 'react-async';
 
 const NewPrescriptionTable = () =>{

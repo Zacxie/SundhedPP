@@ -1,12 +1,18 @@
+import io.prometheus.client.exporter.HTTPServer;
+import io.prometheus.client.hotspot.DefaultExports;
 import org.apache.catalina.LifecycleException;
 import org.apache.catalina.startup.Tomcat;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Optional;
 
 public class Main {
 
-    public static void main(String[] args) throws LifecycleException {
+    public static void main(String[] args) throws LifecycleException, IOException {
+
+        DefaultExports.initialize();
+        HTTPServer prometheusServer = new HTTPServer(19998);
 
         Tomcat tomcat = new Tomcat();
         tomcat.setBaseDir("temp");
