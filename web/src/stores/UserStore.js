@@ -4,7 +4,8 @@ class UserStore {
     users = [];
     token = "false";
     secret = "";
-    state = false;
+    state = true;
+    alerts = false;
 
 
     constructor() {
