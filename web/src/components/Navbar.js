@@ -1,10 +1,10 @@
-import '../styling/Nav2.css';
+import '../styling/Navbar.css';
 import React, {useState} from 'react';
 import Search from './Search';
 import DehazeSharpIcon from '@mui/icons-material/DehazeSharp';
 import {userStore} from "../stores/UserStore";
 
-function Nav2 () {
+function Navbar () {
 
     const [showLinks, setShowLinks] = useState(false);
 
@@ -19,7 +19,7 @@ function Nav2 () {
                 <a href="/#/">
                     <div>
                         <span className="fas fa-file-medical" />
-                        <h1 className="navbar-logo" style={{"display": "inline-block", "marginLeft": "10px"}}>Sundhed++</h1>
+                        <h1 className="navbar-logo" >Sundhed++</h1>
                     </div>
                 </a>
                 <div className="Searchbar">
@@ -39,4 +39,4 @@ function Nav2 () {
     )
 }
 
-export default Nav2
+export default Navbar
