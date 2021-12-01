@@ -11,6 +11,7 @@ function CreatePatient() {
     const onSubmit = (patient) => {
         console.log(patient)
         patientstore.postPatient(patient)
+        window.location.href = "/#/";
     }
     return (
         <div className="form-box">
