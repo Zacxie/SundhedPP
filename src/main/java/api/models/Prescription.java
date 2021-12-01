@@ -26,6 +26,10 @@ public class Prescription {
     @JsonProperty("description")
     public String description;
 
+    @Column(name = "diagnosis", nullable = false)
+    @JsonProperty("diagnosis")
+    public String diagnosis;
+
     @Column(name = "start_date", nullable = false)
     @JsonProperty("start_date") @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     public Date startDate;
