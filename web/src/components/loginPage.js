@@ -27,7 +27,6 @@ const LoginPage = () => {
             } else {
                 // request local
                 console.log("local")
-                let token;
                 axios.get(baseURL+"/validate")
                     .then((response) =>
                         userStore.token = response.headers.authorization
@@ -37,7 +36,7 @@ const LoginPage = () => {
                 localStorage.setItem("Bearer", userStore.token)
             }
 
-        if(userStore != true){
+        if(userStore !== true){
             history.push("/")
         }
     }
