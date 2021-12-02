@@ -32,6 +32,7 @@ const NewPrescriptionTable = () => {
             let prescription_text = prescriptionStore.prescriptions.filter((prescription) => prescription.id === rowID)[0];
             prescription_text.instructions = text;
         }
+        prescriptionStore.putPrescription(prescription);
         setOpen(current => !current)
     }
 
