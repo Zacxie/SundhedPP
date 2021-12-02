@@ -6,7 +6,7 @@ import React from "react";
 const ValidateToken = () => {
 
     let href = window.location.href;
-    let sliceHref = href.search("?token=");
+    let sliceHref = href.indexOf("?token=");
     let token = sliceHref.slice(7);
 
     console.log(token)
