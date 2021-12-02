@@ -2,8 +2,10 @@ import {makeAutoObservable, observable} from "mobx"
 import {prescriptionStore} from "./PrescriptionStore";
 
 
+
 const baseUrl = "https://sundhedpp.fisk.devops.diplomportal.dk";
-// const baseUrl = "http://localhost:8080";//Base url til endpoint for at hente data
+//const baseUrl = "http://localhost:8080";//Base url til endpoint for at hente data
+
 
 
 class PatientStore {
@@ -11,7 +13,7 @@ class PatientStore {
     patients = [];
     selectedId = 0;
 
-    constructor(props) {
+    constructor() {
         makeAutoObservable(this, {patients: observable}, {autoBind: true});
     }
 

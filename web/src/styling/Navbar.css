@@ -2,8 +2,8 @@
 
 .Navbar {
     background: linear-gradient(90deg, rgb(110, 200, 254) 0%, rgb(73,63, 252) 100%);
-    width: 98vw;
-    height: 100%;
+    width: 100vw;
+    height: 110%;
     font-family: Arial, Helvetica, SansSerif;
     display: flex;
     border-top-left-radius: 7px;
@@ -16,11 +16,6 @@
     justify-content: right;
     align-items: center;
 }
-
-.Navbar .RightSide .Links {
-
-}
-
 
 .Navbar .RightSide .Links a {
     text-decoration: none;
@@ -55,9 +50,11 @@
     padding-left: 15px;
 }
 
-.Navbar .LeftSide h1 {
+.Navbar .LeftSide a h1 {
     padding-right: 10px;
     font-size: 25px;
+    display: inline-block;
+    margin-left: 10px;
 }
 
 .Navbar .LeftSide a {
@@ -80,12 +77,20 @@
     .Navbar .RightSide .Links a {
         font-size: 13px;
     }
+    .Navbar .LeftSide a h1 {
+        display: none;
+    }
 }
 
 @media only screen and (max-width: 750px) {
     .Navbar .RightSide .Links a {
         font-size: 10px;
     }
+    .Navbar .LeftSide a h1 {
+        display: none;
+    }
+
+
 
 }
 
@@ -98,7 +103,7 @@
         border: none;
     }
 
-    .Navbar .LeftSide h1 {
+    .Navbar .LeftSide a h1 {
         display: none;
     }
 
@@ -110,10 +115,10 @@
     .Navbar .RightSide #hidden {
         position: absolute;
         z-index: 1000 !important;
-        left: 8px;
-        top: 100px;
+        left: 0;
+        top: 79px;
         max-height: 230px;
-        width: 98vw;
+        width: 100%;
         background: linear-gradient(90deg, rgb(110, 200, 254) 0%, rgb(73,63, 252) 100%);
         display: flex;
         flex-direction: column;

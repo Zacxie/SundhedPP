@@ -24,6 +24,7 @@ function CreatePrescription() {
         prescription['patient_id'] = patient.id;
         console.log(prescription);
         prescriptionStore.postPrescription(prescription);
+        window.location.href = "/#/";
     }
     return(
         <div className="form-box">
