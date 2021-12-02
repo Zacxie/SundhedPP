@@ -1,8 +1,6 @@
-import {TextField, Button} from "@material-ui/core";
 import React from "react";
 import "../styling/Login.css";
 import logo from "../styling/Danmarks_Tekniske_Universitet_logo.svg";
-import GitHubIcon from '@mui/icons-material/GitHub';
 import { useHistory } from 'react-router-dom';
 import {userStore} from "../stores/UserStore";
 import axios from "axios";
@@ -11,13 +9,6 @@ import axios from "axios";
 const LoginPage = () => {
 
     const history = useHistory();
-    const handleNameTextFieldChange = (e) => {
-        userStore.name = e.target.value
-    };
-
-    const handlePassTextFieldChange = (e) => {
-        userStore.pass = e.target.value
-    };
 
 
     const handleClick = (props) => {
@@ -30,7 +21,7 @@ const LoginPage = () => {
 
             } else if (props === "github") {
                 // request github
-                //fetch(baseURL+"/github").then(response => console.log)
+
                 console.log("github")
 
             } else {
@@ -40,14 +31,12 @@ const LoginPage = () => {
                 axios.get(baseURL+"/validate")
                     .then((response) =>
                         userStore.token = response.headers.authorization
-                       //window.location.href = response.data
+                       
                     )
-
-                console.log(userStore.token)
 
                 localStorage.setItem("Bearer", userStore.token)
             }
-            console.log(userStore.isAuthenticated)
+
         if(userStore != true){
             history.push("/")
         }
