@@ -5,20 +5,28 @@ import logo from "../styling/Danmarks_Tekniske_Universitet_logo.svg";
 import GitHubIcon from '@mui/icons-material/GitHub';
 import { useHistory } from 'react-router-dom';
 import {userStore} from "../stores/UserStore";
+import axios from "axios";
 
 
 const LoginPage = () => {
+
     const history = useHistory();
+    const handleNameTextFieldChange = (e) => {
+        userStore.name = e.target.value
+    };
+
+    const handlePassTextFieldChange = (e) => {
+        userStore.pass = e.target.value
+    };
+
 
     const handleClick = (props) => {
-            // const baseURL = "http://localhost:3000/rest/oauth"
+            const baseURL = "http://localhost:8080/rest/oauth"
 
             if (props === "dtu") {
                 // request dtu
-                //fetch(baseURL+"/dtu").then(response => data)
                 console.log("dtu")
-
-                userStore.state = true;
+                window.location.href = baseURL + "/login";
 
             } else if (props === "github") {
                 // request github
@@ -28,32 +36,29 @@ const LoginPage = () => {
             } else {
                 // request local
                 console.log("local")
+                let token;
+                axios.get(baseURL+"/validate")
+                    .then((response) =>
+                        userStore.token = response.headers.authorization
+                       //window.location.href = response.data
+                    )
 
+                console.log(userStore.token)
 
+                localStorage.setItem("Bearer", userStore.token)
             }
-        if(userStore.state === true) {
-            history.push("/");
-        } else{
-            history.push("/login");
+            console.log(userStore.isAuthenticated)
+        if(userStore != true){
+            history.push("/")
         }
     }
 
     return (
         <div className="LoginPage">
             <header className="LoginPage-header">
-                <title>Login Page </title>
-                <div>
-                    <TextField id="username" label="Username"/>
-                </div>
-                <div>
-                    <TextField id="password" label="Password" type="password"/>
-                </div>
-                <br/>
-                <div>
-                    <Button variant="outlined" onClick={() => handleClick("local")}>Login</Button>
-                </div>
+                <h3>Login with CampusNet</h3>
                 <div className="Oauth-Container">
-                    <GitHubIcon onClick={() => handleClick("github")} fontSize="large"  />
+                    {/*<GitHubIcon onClick={() => handleClick("github")} fontSize="large"  /> */}
 
                     <img onClick={() => handleClick("dtu")} className="DTU-logo" src={logo} alt="DTU Logo" />
                 </div>

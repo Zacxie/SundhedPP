@@ -3,6 +3,7 @@ import {DataGrid, GridColDef, GridRowsProp} from "@mui/x-data-grid";
 import {prescriptionStore} from "../../stores/PrescriptionStore";
 import '../../styling/prescriptions/PrescriptionsTable.css'
 import Async from 'react-async';
+import RenewPrescription from '../prescriptions/RenewPrescription'
 
 const NewPrescriptionTable = () =>{
 

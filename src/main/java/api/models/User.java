@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "users")
+@Table(name = "DBUSER")
 @JsonRootName(value = "users")
 public class User {
     @Id
@@ -16,19 +16,30 @@ public class User {
     @JsonProperty("id")
     public int id;
 
-    @Column(name = "name", nullable = false)
-    @JsonProperty("name")
-    public String name;
+    @Column(name = "username", nullable = false)
+    @JsonProperty("username")
+    public String username;
 
-    @Column(name = "token", nullable = false)
-    @JsonProperty("token")
-    public String token;
+    @Column(name = "password", nullable = false)
+    @JsonProperty("password")
+    public String password;
+
+    @Column(name = "role", nullable = false)
+    @JsonProperty("role")
+    public String role;
+
 
     @Column(name = "expiration", nullable = false)
     @JsonProperty("expiration")
-    public String expiration;
+    public int expiration;
 
-    public User(String username) {
-        name = username;
+    public User(){
+
+    }
+    public User(String username, String password) {
+        this.username = username;
+        this.password = password;
+        role = "employee";
+        expiration = 0;
     }
 }

@@ -21,7 +21,6 @@ const RenewPrescription = ({open, onClose, select, onRenewal, patient}) => {
     const [text, setText] =React.useState("")
 
 
-
     // passing text to state
     const handleChange = (e) =>{
         setText(e.target.value)
@@ -40,7 +39,7 @@ const RenewPrescription = ({open, onClose, select, onRenewal, patient}) => {
                     </DialogTitle>
                     <DialogContent>
                         <Typography gutterBottom>
-                            Patient: {patient.patient.name}
+                            Patient: {patient.patient.name || "empty"}
                         </Typography>
                         <Typography gutterBottom>
                             End date: {}
@@ -79,5 +78,6 @@ const RenewPrescription = ({open, onClose, select, onRenewal, patient}) => {
             </div>
         )
 }
+
 
 export default RenewPrescription;

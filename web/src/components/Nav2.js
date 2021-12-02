@@ -9,8 +9,9 @@ function Nav2 () {
     const [showLinks, setShowLinks] = useState(false);
 
     const removeToken = () => {
-        userStore.state = false;
+        userStore.isAuthenticated = false;
         userStore.token = ""
+        localStorage.removeItem("jwttoken")
     }
 
     return(

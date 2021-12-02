@@ -35,6 +35,7 @@
         <!-- Persistent classes - remember to update -->
         <mapping class="api.models.Prescription" />
         <mapping class="api.models.Patient" />
+        <mapping class="api.models.User" />
 
     </session-factory>
 </hibernate-configuration>
