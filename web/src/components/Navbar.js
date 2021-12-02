@@ -10,7 +10,8 @@ function Navbar () {
 
     const removecookie = () => {
         userStore.state = false
-        document.cookie = "login=; expires=The, 01 Jan 1970 00:00:00 UTC; path=/";
+        userStore.isAuthenticated = false;
+        localStorage.removeItem("jwttoken");
     }
 
     return(
