@@ -6,6 +6,8 @@ import {HashRouter, Route, Switch} from "react-router-dom";
 import CreatePatient from "./components/CreatePatient";
 import Error from "./Error";
 import CreatePrescription from "./components/CreatePrescription";
+import ProtectedRoute from "./components/ProtectedRoute";
+import ValidateToken from "./components/ValidateToken";
 
 function App() {
     return (
