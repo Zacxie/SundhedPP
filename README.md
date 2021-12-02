@@ -13,7 +13,7 @@ The project is build on the following technologies:
 ## Running the project
 If you want to run the project, simply build the Docker container using the following command
 
-``docker build -t sundhedpp/latest .``
+``docker build -t sundhedpp:latest .``
 
 After that you can run the container using
 
@@ -23,6 +23,6 @@ After that you can run the container using
 -e "DB_HOST=host-for-database"
 -e "DB_PORT=port-for-database"
 -e "DB_NAME=some-database"
-sundhedpp/latest``
+sundhedpp:latest``
 
 NOTE: You will need to spin up a container with MySQL yourself. 
