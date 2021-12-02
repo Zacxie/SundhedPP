@@ -5,12 +5,12 @@ import '../styling/reset.css';
 import '../styling/MainLayout.css';
 import Header from "./Header";
 
-const MainLayout = ({overlay}) => {
+const MainLayout = ({overlay} , select) => {
     return (
 
         <div className="rootLayout">
             <Header/>
-            <Dashboard/>
+            <Dashboard select={select}/>
             <Footer/>
             {overlay}
         </div>

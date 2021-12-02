@@ -1,4 +1,5 @@
 import {makeObservable, observable} from "mobx";
+import {userStore} from "./UserStore";
 
 
 const baseUrl =  "https://sundhedpp.fisk.devops.diplomportal.dk";
@@ -7,14 +8,19 @@ const baseUrl =  "https://sundhedpp.fisk.devops.diplomportal.dk";
 
 class PrescriptionStore {
 
-    prescriptions = [];
+    prescriptions = []
+
 
     constructor() {
         makeObservable(this, {prescriptions: observable});
     }
 
     fetchPrescriptions() {
-        fetch(baseUrl + "/rest/prescription")
+        fetch(baseUrl + "/rest/prescription",{
+            headers: {
+                'jwttoken': localStorage.getItem("jwttoken")
+            },
+        })
             .then(response => {
                 if (!response.ok) {
                     throw Error('Error');
@@ -34,7 +40,8 @@ class PrescriptionStore {
             method: 'POST',
             headers: {
                 'Accept' : 'application/json',
-                'Content-Type' : 'application/json'
+                'Content-Type' : 'application/json',
+                    'jwttoken': localStorage.getItem("jwttoken")
             },
             body: JSON.stringify(prescription)
         }).then(res => res.json())
