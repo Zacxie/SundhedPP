@@ -1,5 +1,4 @@
 import {makeObservable, observable} from "mobx";
-import {userStore} from "./UserStore";
 
 
 const baseUrl =  "https://sundhedpp.fisk.devops.diplomportal.dk";
