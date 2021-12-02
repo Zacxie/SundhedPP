@@ -36,8 +36,8 @@ public class OauthService {
     static final Summary redirectLatency = Summary.build()
             .name("redirect_latency_seconds").help("Request latency in seconds.").register();
 
-    String baseURL = "http://localhost:8080/rest/oauth/";
-    String baseFrontURL= "http://localhost:3000/#/auth";
+    String baseURL = "https://sundhedpp.fisk.devops.diplomportal.dk/rest/oauth/";
+    String baseFrontURL= "https://sundhedpp.fisk.devops.diplomportal.dk/#/auth";
     String baseAuth = "https://auth.dtu.dk/dtu/?service=";
     String baseAuthValidate = "https://auth.dtu.dk/dtu/validate?service=";
 

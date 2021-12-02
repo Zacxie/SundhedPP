@@ -12,7 +12,7 @@ const LoginPage = () => {
 
 
     const handleClick = (props) => {
-            const baseURL = "http://localhost:8080/rest/oauth"
+            const baseURL = "https://sundhedpp.fisk.devops.diplomportal.dk:/rest/oauth"
 
             if (props === "dtu") {
                 // request dtu
