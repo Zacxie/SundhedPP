@@ -38,6 +38,10 @@ public class OauthService {
 
     String baseURL = "https://sundhedpp.fisk.devops.diplomportal.dk/rest/oauth/";
     String baseFrontURL= "https://sundhedpp.fisk.devops.diplomportal.dk/#/auth";
+
+    //String baseURL = "https://localhost:8080/rest/oauth/";
+    //String baseFrontURL= "https://localhost:8080/#/auth";
+
     String baseAuth = "https://auth.dtu.dk/dtu/?service=";
     String baseAuthValidate = "https://auth.dtu.dk/dtu/validate?service=";
 
@@ -46,12 +50,6 @@ public class OauthService {
     public class LoginData {
         private String username;
         private String password;
-    }
-
-    @GET
-    @Path("test")
-    public String headerTest(@HeaderParam("Authorization") String Authorization){
-        return Authorization;
     }
 
     @GET

@@ -5,7 +5,10 @@ import React from "react";
 
 const ValidateToken = () => {
 
-    let token = window.location.href.slice(36);
+    let href = window.location.href;
+    let sliceHref = href.search("?token=")
+    let token = sliceHref.slice(7)
+
     console.log(token)
     localStorage.setItem("jwttoken", "Bearer "+token)
     userStore.token = token

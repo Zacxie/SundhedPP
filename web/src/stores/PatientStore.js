@@ -17,7 +17,11 @@ class PatientStore {
     }
 
     fetchPatients() {
-        fetch(baseUrl + "/rest/patient")
+        fetch(baseUrl + "/rest/patient", {
+            headers: {
+                'jwttoken': localStorage.getItem("jwttoken")
+            },
+        })
             .then(response => {
                 if (!response.ok) {
                     throw Error('Error');
@@ -36,7 +40,8 @@ class PatientStore {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'jwttoken': localStorage.getItem("jwttoken")
             },
             body: JSON.stringify(patient)
         }).then(res => res.json())
