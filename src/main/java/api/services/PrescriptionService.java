@@ -2,6 +2,7 @@ package api.services;
 
 import api.models.Prescription;
 import database.DatabaseHelper;
+import io.prometheus.client.Summary;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -12,6 +13,9 @@ import java.util.List;
 @Produces(MediaType.APPLICATION_JSON)
 public class PrescriptionService {
 
+    static final Summary prescriptionLatency = Summary.build()
+            .name("prescription_latency_seconds").help("Request latency in seconds.").register();
+
     @GET
     public List<Prescription> getPrescriptions() {
         return Prescription.getAllFromDB();
@@ -20,11 +24,16 @@ public class PrescriptionService {
     @GET
     @Path("/{id}")
     public Prescription getPrescription(@PathParam("id") String id) {
-        Prescription prescription = Prescription.getById(Integer.parseInt(id));
-        if (prescription == null)
-            throw new NotFoundException();
+        Summary.Timer prescriptionTimer = prescriptionLatency.startTimer();
+        try {
+            Prescription prescription = Prescription.getById(Integer.parseInt(id));
+            if (prescription == null)
+                throw new NotFoundException();
 
-        return prescription;
+            return prescription;
+        } finally {
+            prescriptionTimer.observeDuration();
+        }
     }
 
     @GET

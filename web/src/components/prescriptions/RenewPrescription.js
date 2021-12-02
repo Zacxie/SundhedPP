@@ -1,6 +1,5 @@
 
 import * as React from 'react';
-import renewal_datepicker from "../../styling/prescriptions/renewal.css";
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
@@ -22,7 +21,6 @@ const RenewPrescription = ({open, onClose, select, onRenewal, patient}) => {
     const [text, setText] =React.useState("")
 
 
-
     // passing text to state
     const handleChange = (e) =>{
         setText(e.target.value)
@@ -41,16 +39,16 @@ const RenewPrescription = ({open, onClose, select, onRenewal, patient}) => {
                     </DialogTitle>
                     <DialogContent>
                         <Typography gutterBottom>
-                            Patient: {patient.patient.name}
+                            Patient: { }
                         </Typography>
                         <Typography gutterBottom>
                             End date: {}
                         </Typography>
                         <DialogContentText id="alert-dialog-description">
-                            Description: {patient.description}
+                            Description: {}
                         </DialogContentText>
                         <DialogContentText id="alert-dialog-description">
-                            Instructions: {patient.instructions}
+                            Instructions: {}
                         </DialogContentText>
                         <Typography className="renewal_datepicker" gutterBottom>
                             Reason for renewal:
@@ -80,5 +78,6 @@ const RenewPrescription = ({open, onClose, select, onRenewal, patient}) => {
             </div>
         )
 }
+
 
 export default RenewPrescription;

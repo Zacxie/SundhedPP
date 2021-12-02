@@ -1,11 +1,15 @@
-import NewPrescriptionTable from './prescriptions/newPrescriptionTable'
+
+import newPrescriptionsTable from "./prescriptions/newPrescriptionTable";
+import {Route} from "react-router-dom";
 
 import '../styling/Dashboard.css'
 
 const Dashboard = () => {
     return (
         <div id="dashboard__main">
-            <NewPrescriptionTable/>
+
+            <Route path="/" component={newPrescriptionsTable}/>
+
         </div>
     )
 }
