@@ -7,7 +7,7 @@ const ValidateToken = () => {
 
     let href = window.location.href;
     let sliceHref = href.indexOf("?token=");
-    let token = sliceHref.slice(7);
+    let token = href.slice(7+sliceHref);
 
     console.log(token)
     localStorage.setItem("jwttoken", "Bearer "+token)
