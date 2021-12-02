@@ -3,10 +3,12 @@ import {render, screen} from '@testing-library/react';
 import '@testing-library/jest-dom'
 import App from './App';
 import "@testing-library/jest-dom/extend-expect";
+import {userStore} from "./stores/UserStore";
 
 describe("Render components on main page", () => {
 
     test('render menu elements', () => {
+        userStore.isAuthenticated = true
         render(<App/>);
         expect(screen.getByRole('heading', {name: /sundhed\+\+/i}));
         expect(screen.getByRole('link', {name: /create patient/i}));
@@ -15,6 +17,7 @@ describe("Render components on main page", () => {
     });
 
     test('render mainlayout elements', () => {
+        userStore.isAuthenticated = true
         render(<App/>);
         // expect(screen.getByRole('navigation'));
         expect(screen.getByText(/gustav kirkholt \(s164765\) \- gustav kauman \(s195396\) \- sebastian bjerre \(s163526\) \- mikkel blomsterberg \(s172133\)/i));
@@ -25,6 +28,7 @@ describe("Render components on main page", () => {
     });
 
     test('render searchbar', () => {
+        userStore.isAuthenticated = true
         render(<App/>);
         expect(screen.getByRole('textbox', {name: /søg patient/i}));
     });
