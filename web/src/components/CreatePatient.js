@@ -2,6 +2,7 @@ import React from "react"
 import {useForm} from 'react-hook-form';
 import {patientstore} from "../stores/PatientStore";
 import '../styling/Form.css'
+import Header from "./Header";
 
 
 function CreatePatient() {
@@ -14,6 +15,8 @@ function CreatePatient() {
         window.location.href = "/#/";
     }
     return (
+        <div>
+            <Header/>
         <div className="form-box">
             <form onSubmit={handleSubmit(onSubmit)}>
                 <label> Create Patient </label>
@@ -28,6 +31,7 @@ function CreatePatient() {
                 <input type="submit"/>
             </form>
         </div>
+         </div>
     )
 }
 

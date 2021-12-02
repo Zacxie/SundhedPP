@@ -6,6 +6,7 @@ import '../styling/Form.css'
 import {TextField} from "@material-ui/core";
 import {Autocomplete} from "@mui/material";
 import "react-datepicker/dist/react-datepicker.css";
+import Header from "./Header";
 
 function CreatePrescription() {
 
@@ -27,6 +28,8 @@ function CreatePrescription() {
         window.location.href = "/#/";
     }
     return(
+        <div>
+            <Header/>
         <div className="form-box">
             <label> Create Prescription </label>
             <br/>
@@ -63,6 +66,7 @@ function CreatePrescription() {
                 />
                 <input type="submit" />
             </form>
+        </div>
         </div>
     )
 }

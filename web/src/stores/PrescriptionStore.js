@@ -2,7 +2,6 @@ import {makeObservable, observable} from "mobx";
 
 
 const baseUrl =  "https://sundhedpp.fisk.devops.diplomportal.dk";
-//const baseUrl = "http://localhost:8080";//Base url til endpoint for at hente data
 
 
 class PrescriptionStore {
@@ -22,7 +21,6 @@ class PrescriptionStore {
                 return response.json()
             }).then(data => {
             this.forceReloadOrganization(data);
-            console.log(data);
         }).catch(error => {
             console.log(error)
 
@@ -65,7 +63,6 @@ class PrescriptionStore {
 
                 return response.json();
             }).then(data => {
-            console.log(data);
             this.forceReloadOrganization(data);
         }).catch(error => {
             console.log(error);

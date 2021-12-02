@@ -6,12 +6,16 @@
 
 .form-box{
     min-width: 50%;
+    max-width: 50%;
     height: 100vh;
-    margin: 0vw;
+    margin-left: 25vw;
     padding: 5vw ;
     position:relative;
 }
 
+.header_footer {
+    height: 20px;
+}
 
 .form-box input{
     display: block;
