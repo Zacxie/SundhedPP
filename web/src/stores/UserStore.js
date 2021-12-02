@@ -4,7 +4,7 @@ class UserStore {
     name = null;
     pass = null;
     token = "false";
-    isAuthenticated = true;
+    isAuthenticated = false;
 
 
     constructor() {
