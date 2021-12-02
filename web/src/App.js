@@ -1,13 +1,14 @@
 import React from 'react';
 import '../src/styling/App.css';
 import LoginPage from "./components/loginPage";
-import MainLayout from './components/MainLayout'
+import MainLayout from './components/MainLayout';
 import {HashRouter, Route, Switch} from "react-router-dom";
 import CreatePatient from "./components/CreatePatient";
 import Error from "./Error";
 import CreatePrescription from "./components/CreatePrescription";
 import ProtectedRoute from "./components/ProtectedRoute";
 import ValidateToken from "./components/ValidateToken";
+
 
 function App() {
     return (
