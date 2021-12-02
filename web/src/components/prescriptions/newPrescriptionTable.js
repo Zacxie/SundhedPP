@@ -2,8 +2,8 @@ import React, {useState} from "react";
 import {DataGrid, GridColDef, GridRowsProp} from "@mui/x-data-grid";
 import {prescriptionStore} from "../../stores/PrescriptionStore";
 import '../../styling/prescriptions/PrescriptionsTable.css'
-import Async from 'react-async';
 import {observer} from "mobx-react-lite";
+import RenewPrescription from "./RenewPrescription";
 
 const NewPrescriptionTable = () => {
 
@@ -63,7 +63,7 @@ const NewPrescriptionTable = () => {
                 rows={rows}
                 onRowClick={(row) => changeDialog(row.id)}
             />
-            <Async RenewPrescription open={open} onClose={onClose} select={select} onRenewal={onRenewal}
+            <RenewPrescription open={open} onClose={onClose} select={select} onRenewal={onRenewal}
                    patient={patient}/>
         </div>
     );
