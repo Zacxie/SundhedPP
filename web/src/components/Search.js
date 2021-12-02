@@ -9,6 +9,7 @@ function Search() {
 
     return (
         <Autocomplete
+            data-testid="autocomplete"
             id="free-solo-demo"
             freeSolo
             options={patientstore.patients} // data
