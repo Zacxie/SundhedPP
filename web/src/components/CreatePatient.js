@@ -3,8 +3,6 @@ import {useForm} from 'react-hook-form';
 import {patientstore} from "../stores/PatientStore";
 import '../styling/Form.css'
 import Header from "./Header";
-import Dashboard from "./Dashboard";
-import Footer from "./Footer";
 
 
 function CreatePatient() {
@@ -12,13 +10,13 @@ function CreatePatient() {
     const {register, handleSubmit} = useForm();
 
     const onSubmit = (patient) => {
-        console.log(patient)
         patientstore.postPatient(patient)
         window.location.href = "/#/";
     }
     return (
-        <div className="form-box">
+        <div>
             <Header/>
+        <div className="form-box">
             <form onSubmit={handleSubmit(onSubmit)}>
                 <label> Create Patient </label>
                 <input type="text"
@@ -31,8 +29,8 @@ function CreatePatient() {
 
                 <input type="submit"/>
             </form>
-            <Footer/>
         </div>
+         </div>
     )
 }
 

@@ -3,7 +3,6 @@ import {userStore} from "./UserStore";
 
 
 const baseUrl =  "https://sundhedpp.fisk.devops.diplomportal.dk";
-//const baseUrl = "http://localhost:8080";//Base url til endpoint for at hente data
 
 
 class PrescriptionStore {
@@ -48,6 +47,31 @@ class PrescriptionStore {
             .then(res => console.log(res));
     }
 
+    putPrescription(prescription) {
+        if (prescription.id == null || prescription.id === 0)
+            return;
+
+        let jsonPrescription = {};
+        // JS copies by reference by default, so we have use this method to get an actual copy of the object
+        Object.assign(jsonPrescription, this.prescriptions.filter((presc) => presc.id === prescription.id)[0]);
+
+        // Convert to something the API can understand
+        if (jsonPrescription.patient != null) {
+            delete jsonPrescription.patient;
+            jsonPrescription.patient_id = prescription.patient.id;
+        }
+
+        fetch(baseUrl + "/rest/prescription/" + prescription.id, {
+            method: 'PUT',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(jsonPrescription)
+        }).then(res => res.json())
+            .then(res => console.log(res));
+    }
+
     forceReloadOrganization = (results) => {
         this.prescriptions = [];
         if (results !== "") {
@@ -55,6 +79,7 @@ class PrescriptionStore {
                 this.prescriptions.push({
                         id: item.id,
                         description: item.description,
+                        diagnosis: item.diagnosis,
                         start_date: item.start_date,
                         end_date: item.end_date,
                         patient: item.patient
@@ -72,7 +97,6 @@ class PrescriptionStore {
 
                 return response.json();
             }).then(data => {
-            console.log(data);
             this.forceReloadOrganization(data);
         }).catch(error => {
             console.log(error);
