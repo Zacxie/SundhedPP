@@ -33,7 +33,7 @@ const LoginPage = () => {
 
                     )
 
-                localStorage.setItem("Bearer", userStore.token)
+                localStorage.setItem("jwttoken", userStore.token)
             }
 
         if(userStore !== true){
