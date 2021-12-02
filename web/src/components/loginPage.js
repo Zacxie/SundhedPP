@@ -31,7 +31,7 @@ const LoginPage = () => {
                 axios.get(baseURL+"/validate")
                     .then((response) =>
                         userStore.token = response.headers.authorization
-                       
+
                     )
 
                 localStorage.setItem("Bearer", userStore.token)
