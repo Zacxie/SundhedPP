@@ -10,7 +10,6 @@ function CreatePatient() {
     const {register, handleSubmit} = useForm();
 
     const onSubmit = (patient) => {
-        console.log(patient)
         patientstore.postPatient(patient)
         window.location.href = "/#/";
     }

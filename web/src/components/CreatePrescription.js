@@ -16,14 +16,12 @@ function CreatePrescription() {
 
     const handleAutocomplete = (e, patient) => {
         setPatient(patient);
-        console.log(patient);
     }
 
 
     const onSubmit = (data) => {
         let prescription = data;
         prescription['patient_id'] = patient.id;
-        console.log(prescription);
         prescriptionStore.postPrescription(prescription);
         window.location.href = "/#/";
     }
