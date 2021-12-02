@@ -12,7 +12,7 @@ public class Main {
     public static void main(String[] args) throws LifecycleException, IOException {
 
         DefaultExports.initialize();
-        HTTPServer prometheusServer = new HTTPServer(19998);
+        HTTPServer prometheusServer = new HTTPServer(9090);
 
         Tomcat tomcat = new Tomcat();
         tomcat.setBaseDir("temp");
