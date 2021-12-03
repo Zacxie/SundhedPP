@@ -39,16 +39,16 @@ const RenewPrescription = ({open, onClose, select, onRenewal, patient}) => {
                     </DialogTitle>
                     <DialogContent>
                         <Typography gutterBottom>
-                            Patient: { }
+                            Patient: { (patient.patient != null && patient.patient.name != null) ? patient.patient.name : '' }
                         </Typography>
                         <Typography gutterBottom>
-                            End date: {}
+                            End date: { (patient.end_date != null) ? new Date(patient.end_date).toDateString() : '' }
                         </Typography>
                         <DialogContentText id="alert-dialog-description">
-                            Description: {}
+                            Description: { (patient.description != null) ? patient.description : '' }
                         </DialogContentText>
                         <DialogContentText id="alert-dialog-description">
-                            Instructions: {}
+                            Diagnosis: { (patient.diagnosis) ? patient.diagnosis : '' }
                         </DialogContentText>
                         <Typography className="renewal_datepicker" gutterBottom>
                             Reason for renewal:
