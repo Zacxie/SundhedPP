@@ -9,7 +9,8 @@ const Footer = () => {
                     - Gustav Kauman (s195396)
                     - Sebastian  Bjerre (s163526)
                     - Mikkel Blomsterberg (s172133)
-                    - DevOps ROCKS WOOOOOOOOOOOOOOOO!!!!!!!
+                    - DevOps ROCKS
+                    - Wowsers
                 </p>
             </footer>
         </div>
