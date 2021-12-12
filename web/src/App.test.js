@@ -37,7 +37,7 @@ describe("Render components on main page", () => {
 
 test('list prescriptions for patient', async () => {
     render(<App/>);
-    /*   const autocomplete = screen.getByTestId("autocomplete");
+      const autocomplete = screen.getByTestId("autocomplete");
        const input = within(autocomplete).getByRole("textbox");
        const delay = ms => new Promise(res => setTimeout(res, ms));
 
@@ -54,7 +54,7 @@ test('list prescriptions for patient', async () => {
        await delay(1000);
 
        await screen.getByRole('')
-   */
+
 
 
 });
