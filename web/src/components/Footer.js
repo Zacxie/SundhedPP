@@ -10,7 +10,6 @@ const Footer = () => {
                     - Sebastian  Bjerre (s163526)
                     - Mikkel Blomsterberg (s172133)
                     - DevOps ROCKS
-                    - Wowsers
                 </p>
             </footer>
         </div>
